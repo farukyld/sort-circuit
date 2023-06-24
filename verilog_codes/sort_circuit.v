@@ -8,6 +8,7 @@ module sort_circuit #(
 
     // User interface    
     input wire rst_n,
+    input wire [ADDR_WDTH-1:0] arr_size,
     input wire start,
     output wire done,
     output wire error,
