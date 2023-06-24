@@ -22,6 +22,7 @@ module controller #(
             // R channel
     input  wire r_valid,
     output wire r_ready,
+    input  wire [RESP_WDTH-1:0] r_resp,
     
         // Write transaction
             // AW channel
@@ -32,6 +33,7 @@ module controller #(
     input  wire w_ready,
             // B channel
     input  wire b_valid,
+    input wire [RESP_WDTH-1:0] b_resp,
     output wire b_ready,
 
     // From datapath (Comparison results)
