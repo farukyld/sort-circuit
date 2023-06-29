@@ -1,22 +1,56 @@
-import re
 import xml.etree.ElementTree as ET
 import sys
+from pyverilog.vparser.parser import parse
+from pyverilog.vparser.ast import (
+        Source,
+        Description,
+        ModuleDef,
+        Paramlist,
+        Portlist,
+        Port,
+        Width,
+        Decl,
+        Parameter,
+        Rvalue,
+        Minus,
+        Identifier,
+
+        )
+
 
 def parse_verilog_header(filename):
-    with open(filename, 'r') as file:
-        content = file.read()
+    # Parse Verilog file using pyverilog
+    ast, _ = parse([filename])
+    
+    # Extract module name, input, and output ports
+    children_tuple = ast.children()
+    desc:Description = children_tuple[0]
+    module:ModuleDef = desc.definitions[0]
 
-    # Regular expressions to match module name, input/output ports
-    module_pattern = re.compile(r'module\s+(\w+)', re.MULTILINE)
-    input_pattern = re.compile(r'input\s+(?:wire)?\s*(?:\[\s*(\d+).*?:\s*0\s*\])?\s*(\w+)', re.MULTILINE)
-    output_pattern = re.compile(r'output\s+(?:wire)?\s*(?:\[\s*(\d+).*?:\s*0\s*\])?\s*(\w+)', re.MULTILINE)
+    paramDict = {}
+    param_list = [decl.children()[0] for decl in module.paramlist.params]
+    for parameter in param_list:
+        paramDict[parameter.name] = int(parameter.value.var.value)
 
-    # Find module name, input, and output ports
-    module_name = re.search(module_pattern, content).group(1)
-    inputs = [(name, int(width) if width else 1) for width, name in re.findall(input_pattern, content)]
-    outputs = [(name, int(width) if width else 1) for width, name in re.findall(output_pattern, content)]
+    inputs = []
+    outputs = []
+    for item in [item.first for item in module.portlist.ports]:
+        item = item
+        width = item.width
+        pin_width = 1
+        if width and isinstance(width.msb, Minus) and isinstance(width.msb.left, Identifier):
+            msbVal = paramDict[width.msb.left.name] - int(width.msb.right.value)
+            lsbVal = int(width.lsb.value)
+            pin_width = msbVal-lsbVal+1
+            
+        pin_info = (item.name, pin_width)
 
-    return module_name, inputs, outputs
+        if item.__class__.__name__ == 'Input':
+            inputs.append(pin_info)
+        if item.__class__.__name__ == 'Output':
+            outputs.append(pin_info)
+
+    return module.name, inputs, outputs
 
 def insert_circuit(logisim_file, circuit_name, inputs, outputs):
     # Parse the Logisim XML file

@@ -1,1 +1,3 @@
-a.out
+*.out
+parsetab.py
+circuit_generator_venv
