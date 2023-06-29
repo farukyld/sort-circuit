@@ -1,1 +1,4 @@
-a.out
+*.out
+parsetab.py
+circuit_generator_venv
+generated_logisim_files
