@@ -4,12 +4,12 @@ module datapath #(
     parameter RESP_WDTH = 1)
 (
     // Clock
-    input wire clk;
+    input wire clk,
 
     // reset
-    input wire rst_n;
+    input wire rst_n,
 
-    input wire [ADDR_WDTH-1:0] arr_size;
+    input wire [ADDR_WDTH-1:0] arr_size,
     // Memory interface
         // Read transaction
             // AR channel
@@ -51,7 +51,7 @@ module datapath #(
 
     // about register elem2compare
     input wire ld_elem2compare, // loads value from array read.
-    input wire clr_elem2compare
+    input wire clr_elem2compare,
 
     // about array read address
     input wire sl_i_j_to_arr_ra, // select i or j to array read address.
@@ -63,7 +63,7 @@ module datapath #(
     // about array write data
     input wire sl_elem2insert_elem2compare_to_arr_w
         // select elem2insert or elem2compare to array write data.
-)
+);
 
     // I used ADDR_WDTH not ADDR_WDTH-1 consciously
     reg [ADDR_WDTH:0] r_i;
