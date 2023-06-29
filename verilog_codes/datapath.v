@@ -70,8 +70,8 @@ module datapath #(
     reg [ADDR_WDTH:0] r_i;
     reg [ADDR_WDTH:0] r_j;
     
-    reg [DATA_WDTH:0] r_elem2insert; // Correct this part in next commit. forgot -1
-    reg [DATA_WDTH:0] r_elem2compare; // Correct this part in next commit. forgot -1 
+    reg [DATA_WDTH-1:0] r_elem2insert;
+    reg [DATA_WDTH-1:0] r_elem2compare;
 
 
     // read process registers
