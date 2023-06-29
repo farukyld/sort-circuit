@@ -59,6 +59,10 @@ module controller #(
     output wire sl_i_j_to_arg_read_addr,
     output wire ld_arg_read_addr,
 
+        // about register return_read_data
+    output wire ld_return_read_data,
+
+
         // About register arg_write_addr
     output wire sl_j_j_plus_1_to_arg_write_addr,
     output wire ld_arg_write_addr,

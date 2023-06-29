@@ -53,6 +53,8 @@ module datapath #(
     input wire sl_i_j_to_arg_read_addr, // select i or j to register arg_read_addr.
     input wire ld_arg_read_addr,
 
+    // about register return_read_data
+    input wire ld_return_read_data,
 
     // about register arg_write_addr
     input wire sl_j_j_plus_1_to_arg_write_addr, 

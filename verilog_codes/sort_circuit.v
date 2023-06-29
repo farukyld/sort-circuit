@@ -43,6 +43,7 @@ module sort_circuit #(
     wire ld_elem2insert;
     wire ld_elem2compare;
     wire sl_i_j_to_arg_read_addr, ld_arg_read_addr;
+    wire ld_return_read_data;
     wire sl_j_j_plus_1_to_arg_write_addr, ld_arg_write_addr;
     wire sl_elem2insert_elem2compare_to_arg_write_data, ld_arg_write_data;
     wire elem2insert_gt_elem2compare, j_gte_0, i_lt_arr_size;
@@ -89,6 +90,9 @@ module sort_circuit #(
             // Register arg_read_addr
         .sl_i_j_to_arg_read_addr(sl_i_j_to_arg_read_addr),
         .ld_arg_read_addr(ld_arg_read_addr),
+
+            // Register return_read_data
+        .ld_return_read_data(ld_return_read_data),
 
             // Register arg_write_addr
         .sl_j_j_plus_1_to_arg_write_addr(sl_j_j_plus_1_to_arg_write_addr),
@@ -147,6 +151,9 @@ module sort_circuit #(
             // Register arg_read_addr
         .sl_i_j_to_arg_read_addr(sl_i_j_to_arg_read_addr),
         .ld_arg_read_addr(ld_arg_read_addr),
+
+            // Register return_read_data
+        .ld_return_read_data(ld_return_read_data),
 
             // Register arg_write_addr
         .sl_j_j_plus_1_to_arg_write_addr(sl_j_j_plus_1_to_arg_write_addr),
