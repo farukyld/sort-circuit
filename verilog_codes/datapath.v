@@ -37,40 +37,53 @@ module datapath #(
     // about register i
     input wire sl_1_incd_to_i, // select 1 or incremented to i.
     input wire ld_i,
-    input wire clr_i,
 
     // about register j
     input wire sl_i_minus_1_decrd_to_j, 
         // select i-1 or decremented j to j. 
     input wire ld_j,
-    input wire clr_j,
 
     // about register elem2insert
     input wire ld_elem2insert, // loads value from array read.
-    input wire clr_elem2insert,
 
     // about register elem2compare
     input wire ld_elem2compare, // loads value from array read.
-    input wire clr_elem2compare
 
-    // about array read address
-    input wire sl_i_j_to_arr_ra, // select i or j to array read address.
+    // about register arg_read_addr
+    input wire sl_i_j_to_arg_read_addr, // select i or j to register arg_read_addr.
+    input wire ld_arg_read_addr,
 
-    // about array write address
-    input wire sl_j_j_plus_1_to_arr_wa, 
-        // select j or j+1 to array write address
-    
-    // about array write data
-    input wire sl_elem2insert_elem2compare_to_arr_w
-        // select elem2insert or elem2compare to array write data.
+
+    // about register arg_write_addr
+    input wire sl_j_j_plus_1_to_arg_write_addr, 
+        // select j or j+1 to register arg_write_addr
+    input wire ld_arg_write_addr,
+
+
+    // about register arg_write_data
+    input wire sl_elem2insert_elem2compare_to_arg_write_data,
+        // select elem2insert or elem2compare to register arg_write_data
+    input wire ld_arg_write_data,
 )
 
     // I used ADDR_WDTH not ADDR_WDTH-1 consciously
     reg [ADDR_WDTH:0] r_i;
     reg [ADDR_WDTH:0] r_j;
     
-    reg [DATA_WDTH:0] r_elem2insert;
-    reg [DATA_WDTH:0] r_elem2compare;
+    reg [DATA_WDTH:0] r_elem2insert; // Correct this part in next commit. forgot -1
+    reg [DATA_WDTH:0] r_elem2compare; // Correct this part in next commit. forgot -1 
+
+
+    // read process registers
+    reg [ADDR_WDTH-1:0] r_arg_read_addr;
+    reg [DATA_WDTH-1:0] r_return_read_data;
+    
+    // write process registers
+    reg [ADDR_WDTH-1:0] r_arg_write_addr;
+    reg [DATA_WDTH-1:0] r_arg_write_data;
+
+
+
 
     // operations
     // Coming soon
