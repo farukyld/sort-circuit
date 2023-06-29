@@ -6,8 +6,10 @@ module sort_circuit #(
     // Clock
     input wire clk,
 
-    // User interface    
+    // Reset
     input wire rst_n,
+
+    // User interface
     input wire [ADDR_WDTH-1:0] arr_size,
     input wire start,
     output wire done,
@@ -23,7 +25,6 @@ module sort_circuit #(
     input  wire r_valid,
     output wire r_ready,
     input  wire [DATA_WDTH-1:0] r_data,
-    input  wire [RESP_WDTH-1:0] r_resp,
 
         // Write transaction
             // AW channel
@@ -33,22 +34,17 @@ module sort_circuit #(
             // W channel
     output wire w_valid,
     input  wire w_ready,
-    output wire [DATA_WDTH-1:0] w_data,
-            // B channel
-    input  wire b_valid,
-    input  wire [RESP_WDTH-1:0] b_resp,
-    output wire b_ready
-);
-
-
-    // Signals for inter-module communication
-    wire sl_1_incd_to_i, ld_i, clr_i;
-    wire sl_i_minus_1_decrd_to_j, ld_j, clr_j;
-    wire ld_elem2insert, clr_elem2insert;
-    wire ld_elem2compare, clr_elem2compare;
-    wire sl_i_j_to_arr_ra;
-    wire sl_j_j_plus_1_to_arr_wa;
-    wire sl_elem2insert_elem2compare_to_arr_w;
+    output wire [DATA_WDTH-1:0] w_data
+)
+{
+    // Inter-module signals
+    wire sl_1_incd_to_i, ld_i;
+    wire sl_i_minus_1_decrd_to_j, ld_j;
+    wire ld_elem2insert;
+    wire ld_elem2compare;
+    wire sl_i_j_to_arg_read_addr, ld_arg_read_addr;
+    wire sl_j_j_plus_1_to_arg_write_addr, ld_arg_write_addr;
+    wire sl_elem2insert_elem2compare_to_arg_write_data, ld_arg_write_data;
     wire elem2insert_gt_elem2compare, j_gte_0, i_lt_arr_size;
 
     // Instantiate datapath
@@ -58,50 +54,49 @@ module sort_circuit #(
         .RESP_WDTH(RESP_WDTH)
     ) dp (
         .clk(clk),
-
-        // user interface
         .rst_n(rst_n),
         .arr_size(arr_size),
 
-        // read transaction
+        // Memory interface
+            // Read transaction
         .ar_address(ar_address),
         .r_data(r_data),
-        
-        // write transaction
+
+            // Write transaction
         .aw_address(aw_address),
         .w_data(w_data),
-        
-        // comparison results
+
+        // Comparison results
         .elem2insert_gt_elem2compare(elem2insert_gt_elem2compare),
         .j_gte_0(j_gte_0),
         .i_lt_arr_size(i_lt_arr_size),
-        
-        // control reg i
+
+        // Control signals
+            // Register i
         .sl_1_incd_to_i(sl_1_incd_to_i),
         .ld_i(ld_i),
-        .clr_i(clr_i),
-        
-        // control reg j
+
+            // Register j
         .sl_i_minus_1_decrd_to_j(sl_i_minus_1_decrd_to_j),
         .ld_j(ld_j),
-        .clr_j(clr_j),
-        
-        // control reg elem2insert
+
+            // Register elem2insert
         .ld_elem2insert(ld_elem2insert),
-        .clr_elem2insert(clr_elem2insert),
-        
-        // control reg elem2compare
+
+            // Register elem2compare
         .ld_elem2compare(ld_elem2compare),
-        .clr_elem2compare(clr_elem2compare),
-        
-        // control read address
-        .sl_i_j_to_arr_ra(sl_i_j_to_arr_ra),
-        
-        // control write address
-        .sl_j_j_plus_1_to_arr_wa(sl_j_j_plus_1_to_arr_wa),
-        
-        // control write data
-        .sl_elem2insert_elem2compare_to_arr_w(sl_elem2insert_elem2compare_to_arr_w)
+
+            // Register arg_read_addr
+        .sl_i_j_to_arg_read_addr(sl_i_j_to_arg_read_addr),
+        .ld_arg_read_addr(ld_arg_read_addr),
+
+            // Register arg_write_addr
+        .sl_j_j_plus_1_to_arg_write_addr(sl_j_j_plus_1_to_arg_write_addr),
+        .ld_arg_write_addr(ld_arg_write_addr),
+
+            // Register arg_write_data
+        .sl_elem2insert_elem2compare_to_arg_write_data(sl_elem2insert_elem2compare_to_arg_write_data),
+        .ld_arg_write_data(ld_arg_write_data)
     );
 
     // Instantiate controller
@@ -111,69 +106,55 @@ module sort_circuit #(
         .RESP_WDTH(RESP_WDTH)
     ) ctrl (
         .clk(clk),
-
-        // user interface
         .rst_n(rst_n),
         .start(start),
         .done(done),
         .error(error),
-        
-        // read transaction
-            // read address
+
+        // Memory interface
+            // Read transaction
         .ar_valid(ar_valid),
         .ar_ready(ar_ready),
-
-            // read data
         .r_valid(r_valid),
         .r_ready(r_ready),
-        
-        // write transaction
-            // write address
+
+            // Write transaction
         .aw_valid(aw_valid),
         .aw_ready(aw_ready),
-
-            // write data
         .w_valid(w_valid),
         .w_ready(w_ready),
-        
-            // write response
-        .b_valid(b_valid),
-        .b_resp(b_resp),
-        .b_ready(b_ready),
-        
-        // comparison results
+
+        // Comparison results
         .elem2insert_gt_elem2compare(elem2insert_gt_elem2compare),
         .j_gte_0(j_gte_0),
         .i_lt_arr_size(i_lt_arr_size),
-        
-        // control reg i
+
+        // Control signals
+            // Register i
         .sl_1_incd_to_i(sl_1_incd_to_i),
         .ld_i(ld_i),
-        .clr_i(clr_i),
-        
-        // control reg j
+
+            // Register j
         .sl_i_minus_1_decrd_to_j(sl_i_minus_1_decrd_to_j),
         .ld_j(ld_j),
-        .clr_j(clr_j),
-        
-        // control reg elem2insert
+
+            // Register elem2insert
         .ld_elem2insert(ld_elem2insert),
-        .clr_elem2insert(clr_elem2insert),
-        
-        // control reg elem2compare
+
+            // Register elem2compare
         .ld_elem2compare(ld_elem2compare),
-        .clr_elem2compare(clr_elem2compare),
-        
-        // control read address
-        .sl_i_j_to_arr_ra(sl_i_j_to_arr_ra),
-        
-        // control write address
-        .sl_j_j_plus_1_to_arr_wa(sl_j_j_plus_1_to_arr_wa),
-        
-        // control write data
-        .sl_elem2insert_elem2compare_to_arr_w(sl_elem2insert_elem2compare_to_arr_w)
+
+            // Register arg_read_addr
+        .sl_i_j_to_arg_read_addr(sl_i_j_to_arg_read_addr),
+        .ld_arg_read_addr(ld_arg_read_addr),
+
+            // Register arg_write_addr
+        .sl_j_j_plus_1_to_arg_write_addr(sl_j_j_plus_1_to_arg_write_addr),
+        .ld_arg_write_addr(ld_arg_write_addr),
+
+            // Register arg_write_data
+        .sl_elem2insert_elem2compare_to_arg_write_data(sl_elem2insert_elem2compare_to_arg_write_data),
+        .ld_arg_write_data(ld_arg_write_data)
     );
-
-
-
+}
 endmodule

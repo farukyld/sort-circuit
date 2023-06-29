@@ -14,7 +14,7 @@ module controller #(
     output wire done,
     output wire error,
 
-    // Memory interface Control signals
+    // Memory interface
         // Read transaction
             // AR channel
     output wire ar_valid,
@@ -22,8 +22,7 @@ module controller #(
             // R channel
     input  wire r_valid,
     output wire r_ready,
-    input  wire [RESP_WDTH-1:0] r_resp,
-    
+
         // Write transaction
             // AW channel
     output wire aw_valid,
@@ -45,28 +44,28 @@ module controller #(
         // About register i
     output wire sl_1_incd_to_i,
     output wire ld_i,
-    output wire clr_i,
 
         // About register j
     output wire sl_i_minus_1_decrd_to_j,
     output wire ld_j,
-    output wire clr_j,
 
         // About register elem2insert
     output wire ld_elem2insert,
-    output wire clr_elem2insert,
 
         // About register elem2compare
     output wire ld_elem2compare,
-    output wire clr_elem2compare,
 
-        // About array read address
-    output wire sl_i_j_to_arr_ra,
+        // About register arg_read_addr
+    output wire sl_i_j_to_arg_read_addr,
+    output wire ld_arg_read_addr,
 
-        // About array write address
-    output wire sl_j_j_plus_1_to_arr_wa,
-    
-        // About array write data
-    output wire sl_elem2insert_elem2compare_to_arr_w
+        // About register arg_write_addr
+    output wire sl_j_j_plus_1_to_arg_write_addr,
+    output wire ld_arg_write_addr,
+
+        // About register arg_write_data
+    output wire sl_elem2insert_elem2compare_to_arg_write_data,
+    output wire ld_arg_write_data
 );
+// The internal logic of the controller module goes here.
 endmodule
