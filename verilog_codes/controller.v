@@ -1,3 +1,5 @@
+#`define STATE_WDTH 6
+
 module controller #(
     parameter ADDR_WDTH = 4,
     parameter DATA_WDTH = 32,
@@ -71,5 +73,13 @@ module controller #(
     output wire sl_elem2insert_elem2compare_to_arg_write_data,
     output wire ld_arg_write_data
 );
+
+
+wire [1:0] sl_to_arg_return_state;
+wire ld_arg_return_state;
+reg [STATE_WDTH-1:0] arg_return_state;
+
+wire sl_to_state;
+reg [STATE_WDTH-1:0] state;
 // The internal logic of the controller module goes here.
 endmodule
