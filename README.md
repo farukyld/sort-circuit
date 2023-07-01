@@ -5,12 +5,15 @@ to practice hlsm design, and bus protocols.
 ## how to run
 you will be able to open .circ files with [logisim-evolution](https://github.com/logisim-evolution/logisim-evolution/releases)
 
-to run the python scripts under logisim_circuit_generator_python_scripts folder, you should have a python interpreter that provides the packages given in [requirements.txt](https://github.com/faruk.yld/sort-circuit/requirements.txt)
+### the scripts under logisim_circuit_generator_python_scripts
+ folder, you should have a python interpreter that provides the packages given in [requirements.txt](https://github.com/faruk.yld/sort-circuit/logisim_circuit_generator_python_scripts/requirements.txt) in that folder.
 
 you can do it by:
 
 
 ```bash
+cd logisim_circuit_generator_python_scripts
+
 python3 -m venv virtual_environment_name
 # above line will create an empty virtual environment
 # under a folder with provided name
@@ -26,6 +29,8 @@ python3 -m pip install -r requirements.txt
 
 in powershell
 ```powershell
+cd logisim_circuit_generator_python_scripts
+
 python -m venv virtual_environment_name
 # above line will create an empty virtual environment 
 # under a folder with provided name
