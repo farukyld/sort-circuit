@@ -53,18 +53,20 @@ module datapath #(
     input wire sl_i_j_to_arg_read_addr, // select i or j to register arg_read_addr.
     input wire ld_arg_read_addr,
 
+    // about register return_read_data
+    input wire ld_return_read_data,
 
     // about register arg_write_addr
     input wire sl_j_j_plus_1_to_arg_write_addr, 
         // select j or j+1 to register arg_write_addr
     input wire ld_arg_write_addr,
 
-
     // about register arg_write_data
     input wire sl_elem2insert_elem2compare_to_arg_write_data,
         // select elem2insert or elem2compare to register arg_write_data
     input wire ld_arg_write_data
 );
+
 
     // I used ADDR_WDTH not ADDR_WDTH-1 consciously
     reg [ADDR_WDTH:0] r_i;
