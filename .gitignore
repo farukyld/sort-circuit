@@ -1,4 +1,4 @@
 *.out
-parsetab.py
+**parsetab.py
 **venv/
 generated_logisim_files/
