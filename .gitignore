@@ -1,4 +1,4 @@
 *.out
 parsetab.py
-logisim_circuit_generator_python_scripts/circuit_generator_venv/
+**venv/
 generated_logisim_files/
