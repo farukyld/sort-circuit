@@ -3,7 +3,7 @@ an RTL circuit that sorts the integer values in its register file
 ## purpose
 to practice hlsm design, and bus protocols.
 ## how to run
-you will be able to open .circ files with [logisim-evolution](https://github.com/logisim-evolution/logisim-evolution/releases)
+you will be able to open [.circ files](https://github.com/farukyld/sort-circuit/tree/main/logisim_files) with [logisim-evolution](https://github.com/logisim-evolution/logisim-evolution/releases)
 
 ### the scripts under logisim_circuit_generator_python_scripts
  folder, you should have a python interpreter that provides the packages given in [requirements.txt](https://github.com/faruk.yld/sort-circuit/logisim_circuit_generator_python_scripts/requirements.txt) in that folder.
