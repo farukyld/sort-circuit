@@ -1,4 +1,4 @@
-#`define STATE_WDTH 6
+`define STATE_WDTH 6
 
 module controller #(
     parameter ADDR_WDTH = 4,
