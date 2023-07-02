@@ -1,4 +1,4 @@
-#`define STATE_WDTH 6
+`define STATE_WDTH 6
 
 module controller #(
     parameter ADDR_WDTH = 4,
@@ -23,6 +23,7 @@ module controller #(
     input  wire ar_ready,
             // R channel
     input  wire r_valid,
+    input wire [RESP_WDTH-1:0] r_resp,
     output wire r_ready,
 
         // Write transaction

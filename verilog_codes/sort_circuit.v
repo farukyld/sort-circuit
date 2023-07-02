@@ -24,6 +24,7 @@ module sort_circuit #(
             // R channel
     input  wire r_valid,
     output wire r_ready,
+    input wire [RESP_WDTH-1:0] r_resp,
     input  wire [DATA_WDTH-1:0] r_data,
 
         // Write transaction
@@ -35,8 +36,8 @@ module sort_circuit #(
     output wire w_valid,
     input  wire w_ready,
     output wire [DATA_WDTH-1:0] w_data
-)
-{
+);
+
     // Inter-module signals
     wire sl_1_incd_to_i, ld_i;
     wire sl_i_minus_1_decrd_to_j, ld_j;
@@ -121,6 +122,7 @@ module sort_circuit #(
         .ar_ready(ar_ready),
         .r_valid(r_valid),
         .r_ready(r_ready),
+        .r_resp(r_resp),
 
             // Write transaction
         .aw_valid(aw_valid),
@@ -163,5 +165,5 @@ module sort_circuit #(
         .sl_elem2insert_elem2compare_to_arg_write_data(sl_elem2insert_elem2compare_to_arg_write_data),
         .ld_arg_write_data(ld_arg_write_data)
     );
-}
+
 endmodule
