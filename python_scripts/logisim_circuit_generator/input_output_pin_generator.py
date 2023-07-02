@@ -50,6 +50,9 @@ def parse_verilog_header(filename):
         if item.__class__.__name__ == 'Output':
             outputs.append(pin_info)
 
+    print("inputs: \n",",".join([pin[0] for pin in inputs]))
+    print("outputs: \n",",".join([pin[0] for pin in outputs]))
+
     return module.name, inputs, outputs
 
 def insert_circuit(logisim_file, circuit_name, inputs, outputs):

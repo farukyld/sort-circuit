@@ -20,15 +20,15 @@ def extract_state_names(file_path):
             state_name = soup.get_text().strip()
             state_names.append(state_name)
 
-    # Print and mark duplicates
+    duplicates = set()
     state_counts = {}
     for state_name in state_names:
         state_counts[state_name] = state_counts.get(state_name, 0) + 1
-        print(f"State: {state_name}")
         if state_counts[state_name] > 1:
-            print(f"Duplicate: {state_name}")
-    print(f"total of {len(state_names)} states")
-    
+            duplicates.add(state_name)
+    return state_names, duplicates
+
+
 if __name__ == "__main__":
     # Check if the file path is provided as a command line argument
     if len(sys.argv) != 2:
@@ -37,4 +37,5 @@ if __name__ == "__main__":
 
     # Extract state names from the Draw.io XML file
     file_path = sys.argv[1]
-    extract_state_names(file_path)
+    state_names, duplicates = extract_state_names(file_path)
+    print("\n".join(state_names))
