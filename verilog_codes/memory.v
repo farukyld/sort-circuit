@@ -27,7 +27,11 @@ module memory #(
             // W channel
     input  wire w_valid,
     output wire w_ready,
-    input  wire [DATA_WDTH-1:0] w_data
+    input  wire [DATA_WDTH-1:0] w_data,
+            // B channel
+    output wire b_valid,
+    input wire b_ready,
+    output wire [RESP_WDTH-1:0] b_resp,
 );
 
     // Memory module logic here
