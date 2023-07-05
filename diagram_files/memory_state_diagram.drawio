@@ -274,15 +274,6 @@
                         <mxPoint x="-6" y="12" as="offset"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="98" value="" style="group" vertex="1" connectable="0" parent="1">
-                    <mxGeometry x="120" y="878.04" width="210" height="93.92000000000007" as="geometry"/>
-                </mxCell>
-                <mxCell id="87" value="&lt;span style=&quot;font-size: 15px;&quot;&gt;respond_b&lt;/span&gt;" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="98">
-                    <mxGeometry width="110" height="70" as="geometry"/>
-                </mxCell>
-                <mxCell id="89" value="&lt;font color=&quot;#66b2ff&quot; face=&quot;Courier New&quot;&gt;&lt;b&gt;b_valid := 1&lt;br&gt;&lt;/b&gt;&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=15;" vertex="1" parent="98">
-                    <mxGeometry x="90" y="61.960000000000036" width="120" height="31.96" as="geometry"/>
-                </mxCell>
                 <mxCell id="99" value="" style="group" vertex="1" connectable="0" parent="1">
                     <mxGeometry x="230" y="588.04" width="230" height="80" as="geometry"/>
                 </mxCell>
@@ -300,6 +291,15 @@
                             <mxPoint x="-75" y="50"/>
                         </Array>
                     </mxGeometry>
+                </mxCell>
+                <mxCell id="101" value="" style="group" vertex="1" connectable="0" parent="1">
+                    <mxGeometry x="120" y="878.04" width="250" height="101.96000000000004" as="geometry"/>
+                </mxCell>
+                <mxCell id="87" value="&lt;span style=&quot;font-size: 15px;&quot;&gt;respond_b&lt;/span&gt;" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="101">
+                    <mxGeometry width="110" height="70" as="geometry"/>
+                </mxCell>
+                <mxCell id="89" value="&lt;font color=&quot;#66b2ff&quot; face=&quot;Courier New&quot;&gt;&lt;b&gt;b_valid := 1&lt;br&gt;input_enable := 0&lt;br&gt;&lt;/b&gt;&lt;/font&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=15;" vertex="1" parent="101">
+                    <mxGeometry x="90" y="61.960000000000036" width="160" height="40" as="geometry"/>
                 </mxCell>
             </root>
         </mxGraphModel>
