@@ -1978,6 +1978,14 @@
       <a name="label" val="ASSIGN_E2CMP"/>
       <a name="width" val="5"/>
     </comp>
+    <comp lib="0" loc="(1550,1630)" name="Tunnel">
+      <a name="facing" val="east"/>
+      <a name="label" val="write_submodule_done"/>
+    </comp>
+    <comp lib="0" loc="(1560,1590)" name="Tunnel">
+      <a name="facing" val="east"/>
+      <a name="label" val="wait_submodule_return2"/>
+    </comp>
     <comp lib="0" loc="(1570,370)" name="Tunnel">
       <a name="facing" val="south"/>
       <a name="label" val="d_arg_return_state"/>
@@ -1991,21 +1999,9 @@
       <a name="facing" val="east"/>
       <a name="label" val="wait_submodule_return1"/>
     </comp>
-    <comp lib="0" loc="(1590,1450)" name="Tunnel">
+    <comp lib="0" loc="(1600,1540)" name="Tunnel">
       <a name="facing" val="east"/>
-      <a name="label" val="wait_submodule_return1"/>
-    </comp>
-    <comp lib="0" loc="(1590,1490)" name="Tunnel">
-      <a name="facing" val="east"/>
-      <a name="label" val="write_submodule_done"/>
-    </comp>
-    <comp lib="0" loc="(1600,1610)" name="Tunnel">
-      <a name="facing" val="east"/>
-      <a name="label" val="write_submodule_done"/>
-    </comp>
-    <comp lib="0" loc="(1610,1570)" name="Tunnel">
-      <a name="facing" val="east"/>
-      <a name="label" val="wait_submodule_return2"/>
+      <a name="label" val="shif_elem2compare_right"/>
     </comp>
     <comp lib="0" loc="(1620,1680)" name="Tunnel">
       <a name="facing" val="east"/>
@@ -2019,9 +2015,13 @@
       <a name="facing" val="east"/>
       <a name="label" val="shift_elem2insert_left"/>
     </comp>
-    <comp lib="0" loc="(1630,1400)" name="Tunnel">
+    <comp lib="0" loc="(1640,1430)" name="Tunnel">
       <a name="facing" val="east"/>
-      <a name="label" val="shif_elem2compare_right"/>
+      <a name="label" val="wait_submodule_return1"/>
+    </comp>
+    <comp lib="0" loc="(1640,1470)" name="Tunnel">
+      <a name="facing" val="east"/>
+      <a name="label" val="write_submodule_done"/>
     </comp>
     <comp lib="0" loc="(1660,1590)" name="Tunnel">
       <a name="label" val="gen_wait_submodule_return2"/>
@@ -2673,16 +2673,16 @@
       <a name="size" val="30"/>
     </comp>
     <comp lib="1" loc="(1240,2570)" name="OR Gate"/>
+    <comp lib="1" loc="(1610,1610)" name="AND Gate">
+      <a name="negate1" val="true"/>
+    </comp>
     <comp lib="1" loc="(1640,1330)" name="AND Gate">
       <a name="negate1" val="true"/>
     </comp>
-    <comp lib="1" loc="(1640,1470)" name="AND Gate"/>
-    <comp lib="1" loc="(1660,1590)" name="AND Gate">
-      <a name="negate1" val="true"/>
-    </comp>
+    <comp lib="1" loc="(1660,1590)" name="OR Gate"/>
     <comp lib="1" loc="(1670,1700)" name="AND Gate"/>
     <comp lib="1" loc="(1690,1310)" name="OR Gate"/>
-    <comp lib="1" loc="(1690,1450)" name="OR Gate"/>
+    <comp lib="1" loc="(1690,1450)" name="AND Gate"/>
     <comp lib="1" loc="(1780,2560)" name="OR Gate">
       <a name="facing" val="south"/>
     </comp>
@@ -2796,10 +2796,10 @@
     <wire from="(1540,450)" to="(1580,450)"/>
     <wire from="(1560,400)" to="(1560,420)"/>
     <wire from="(1580,400)" to="(1580,450)"/>
+    <wire from="(1600,1540)" to="(1610,1540)"/>
+    <wire from="(1610,1540)" to="(1610,1570)"/>
     <wire from="(1630,1260)" to="(1640,1260)"/>
-    <wire from="(1630,1400)" to="(1640,1400)"/>
     <wire from="(1640,1260)" to="(1640,1290)"/>
-    <wire from="(1640,1400)" to="(1640,1430)"/>
     <wire from="(1720,2420)" to="(1760,2420)"/>
     <wire from="(1720,2450)" to="(1800,2450)"/>
     <wire from="(1760,2420)" to="(1760,2510)"/>
