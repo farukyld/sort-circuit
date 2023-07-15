@@ -18,7 +18,7 @@
   <lib desc="#BFH-Praktika" name="9"/>
   <lib desc="#Input/Output-Extra" name="10"/>
   <lib desc="#Soc" name="11"/>
-  <main name="sort_circuit"/>
+  <main name="main"/>
   <options>
     <a name="gateUndefined" val="ignore"/>
     <a name="simlimit" val="1000"/>
@@ -2103,6 +2103,10 @@
     <comp lib="0" loc="(1690,1450)" name="Tunnel">
       <a name="label" val="gen_shif_elem2compare_right"/>
     </comp>
+    <comp lib="0" loc="(1690,20)" name="Tunnel">
+      <a name="facing" val="east"/>
+      <a name="label" val="clk"/>
+    </comp>
     <comp lib="0" loc="(1720,2420)" name="Tunnel">
       <a name="facing" val="east"/>
       <a name="label" val="read_arr_i"/>
@@ -2868,16 +2872,36 @@
     <wire from="(1610,1540)" to="(1610,1570)"/>
     <wire from="(1630,1260)" to="(1640,1260)"/>
     <wire from="(1640,1260)" to="(1640,1290)"/>
+    <wire from="(1690,20)" to="(1780,20)"/>
+    <wire from="(1700,320)" to="(1700,570)"/>
+    <wire from="(1700,320)" to="(1740,320)"/>
+    <wire from="(1700,570)" to="(1760,570)"/>
     <wire from="(1720,2420)" to="(1760,2420)"/>
     <wire from="(1720,2450)" to="(1800,2450)"/>
+    <wire from="(1740,170)" to="(1740,320)"/>
+    <wire from="(1740,170)" to="(1780,170)"/>
+    <wire from="(1740,320)" to="(1800,320)"/>
     <wire from="(1760,2420)" to="(1760,2510)"/>
     <wire from="(1760,2420)" to="(1820,2420)"/>
+    <wire from="(1760,570)" to="(1760,760)"/>
+    <wire from="(1760,760)" to="(1870,760)"/>
+    <wire from="(1780,20)" to="(1780,170)"/>
+    <wire from="(1780,20)" to="(2400,20)"/>
     <wire from="(1780,2560)" to="(1840,2560)"/>
     <wire from="(1800,2430)" to="(1800,2450)"/>
     <wire from="(1800,2430)" to="(1820,2430)"/>
     <wire from="(1800,2450)" to="(1800,2510)"/>
     <wire from="(1840,2440)" to="(1840,2560)"/>
     <wire from="(1860,2420)" to="(1890,2420)"/>
+    <wire from="(2320,760)" to="(2440,760)"/>
+    <wire from="(2360,320)" to="(2400,320)"/>
+    <wire from="(2390,560)" to="(2390,660)"/>
+    <wire from="(2390,560)" to="(2450,560)"/>
+    <wire from="(2390,660)" to="(2440,660)"/>
+    <wire from="(2400,20)" to="(2400,320)"/>
+    <wire from="(2400,320)" to="(2450,320)"/>
+    <wire from="(2440,660)" to="(2440,760)"/>
+    <wire from="(2450,320)" to="(2450,560)"/>
     <wire from="(350,1490)" to="(380,1490)"/>
     <wire from="(350,1780)" to="(370,1780)"/>
     <wire from="(350,1860)" to="(370,1860)"/>
