@@ -6,13 +6,14 @@ def parse_xml(xml_file, chosen_circuit=None):
     tree = ET.parse(xml_file)
     root = tree.getroot()
 
-    inputs = []
-    outputs = []
     circuits = {}
-
     for circuit in root.iter('circuit'):
-        circuit_name = circuit.get('name')
-        circuits[circuit_name] = {'inputs': [], 'outputs': []}
+        module_name = circuit.get('name')
+        if chosen_circuit is not None and module_name != chosen_circuit:
+            continue
+        
+        inputs = []
+        outputs = []
         for comp in circuit.iter('comp'):
             if comp.get('name') == 'Pin':
                 label = None
@@ -28,17 +29,17 @@ def parse_xml(xml_file, chosen_circuit=None):
 
                 if label is not None:
                     if direction == 'true':
-                        circuits[circuit_name]['outputs'].append((label, width))
+                        outputs.append((label, width))
                     else:
-                        circuits[circuit_name]['inputs'].append((label, width))
+                        inputs.append((label, width))
 
-    if chosen_circuit is None or chosen_circuit not in circuits:
-        print("Available circuits:", ', '.join(circuits.keys()))
-        chosen_circuit = input("Please enter the name of the circuit to generate Verilog code for: ")
-    
-    inputs, outputs = circuits.get(chosen_circuit, ({}, {}))
+        if module_name not in circuits: 
+            circuits[module_name] = (inputs, outputs)
 
-    return inputs, outputs, chosen_circuit
+    if chosen_circuit is None:
+        return circuits
+    else:
+        return circuits[chosen_circuit]
 
 def generate_verilog(inputs, outputs, module_name='module_name'):
     inputs_str = ', '.join([f"input [{int(width)-1}:0] {name}" if width != '1' else f"input {name}" for name, width in inputs])
@@ -53,15 +54,19 @@ endmodule
     """
     return verilog_module
 
+def write_to_file(content, file_path):
+    with open(file_path, 'w') as f:
+        f.write(content)
 
 if __name__ == "__main__":
-    if len(sys.argv) < 2:
-        print(f"Usage: python3 {sys.argv[0]} xml_file [circuit_name]")
+    if len(sys.argv) < 3:
+        print("Usage: python3 script_name.py logisim_file verilog_file [circuit_name]")
         sys.exit(1)
 
     xml_file = sys.argv[1]
-    chosen_circuit = sys.argv[2] if len(sys.argv) > 2 else None
+    verilog_file = sys.argv[2]
+    chosen_circuit = sys.argv[3] if len(sys.argv) > 3 else None
 
-    inputs, outputs, module_name = parse_xml(xml_file, chosen_circuit)
-    verilog_module = generate_verilog(inputs, outputs, module_name)
-    print(verilog_module)
+    inputs_outputs_module_name = parse_xml(xml_file, chosen_circuit)
+    verilog_module = generate_verilog(*inputs_outputs_module_name)
+    write_to_file(verilog_module, verilog_file)
