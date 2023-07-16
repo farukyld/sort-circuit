@@ -2,36 +2,43 @@ import xml.etree.ElementTree as ET
 import sys
 import os
 
-def parse_xml(xml_file):
+def parse_xml(xml_file, chosen_circuit=None):
     tree = ET.parse(xml_file)
     root = tree.getroot()
 
     inputs = []
     outputs = []
-    for comp in root.iter('comp'):
-        if comp.get('name') == 'Pin':
-            label = None
-            width = '1'
-            direction = None
-            for attribute in comp:
-                if attribute.get('name') == 'label':
-                    label = attribute.get('val')
-                if attribute.get('name') == 'width':
-                    width = attribute.get('val')
-                if attribute.get('name') == 'output':
-                    direction = attribute.get('val')
+    circuits = {}
 
-            if label is not None:
-                if direction == 'true':
-                    outputs.append((label, width))
-                else:
-                    inputs.append((label, width))
-    
-    module_name = None
     for circuit in root.iter('circuit'):
-        module_name = circuit.get('name')
+        circuit_name = circuit.get('name')
+        circuits[circuit_name] = {'inputs': [], 'outputs': []}
+        for comp in circuit.iter('comp'):
+            if comp.get('name') == 'Pin':
+                label = None
+                width = '1'
+                direction = None
+                for attribute in comp:
+                    if attribute.get('name') == 'label':
+                        label = attribute.get('val')
+                    if attribute.get('name') == 'width':
+                        width = attribute.get('val')
+                    if attribute.get('name') == 'output':
+                        direction = attribute.get('val')
 
-    return inputs, outputs, module_name
+                if label is not None:
+                    if direction == 'true':
+                        circuits[circuit_name]['outputs'].append((label, width))
+                    else:
+                        circuits[circuit_name]['inputs'].append((label, width))
+
+    if chosen_circuit is None or chosen_circuit not in circuits:
+        print("Available circuits:", ', '.join(circuits.keys()))
+        chosen_circuit = input("Please enter the name of the circuit to generate Verilog code for: ")
+    
+    inputs, outputs = circuits.get(chosen_circuit, ({}, {}))
+
+    return inputs, outputs, chosen_circuit
 
 def generate_verilog(inputs, outputs, module_name='module_name'):
     inputs_str = ', '.join([f"input [{int(width)-1}:0] {name}" if width != '1' else f"input {name}" for name, width in inputs])
@@ -46,14 +53,15 @@ endmodule
     """
     return verilog_module
 
+
 if __name__ == "__main__":
-    if len(sys.argv) != 2:
-        print("Usage: python3 script_name.py xml_file.xml")
+    if len(sys.argv) < 2:
+        print(f"Usage: python3 {sys.argv[0]} xml_file [circuit_name]")
         sys.exit(1)
-    
+
     xml_file = sys.argv[1]
-    inputs, outputs, module_name = parse_xml(xml_file)
-    if module_name is None:
-        module_name = os.path.splitext(os.path.basename(xml_file))[0] # Use the file name as module name if circuit name is not found
+    chosen_circuit = sys.argv[2] if len(sys.argv) > 2 else None
+
+    inputs, outputs, module_name = parse_xml(xml_file, chosen_circuit)
     verilog_module = generate_verilog(inputs, outputs, module_name)
     print(verilog_module)
