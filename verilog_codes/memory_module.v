@@ -1,7 +1,7 @@
 
 module memory #(
     parameter ADDR_WDTH = 4,
-    parameter DATA_WDTH = ADDR_WDTH-12,
+    parameter DATA_WDTH = 32,
     parameter RESP_WDTH = 1)
 
 (

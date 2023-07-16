@@ -71,7 +71,7 @@ def write_to_file(content, file_path):
 if __name__ == "__main__":
     if len(sys.argv) < 3:
         print(
-            "Usage: python3 script_name.py logisim_file verilog_file [circuit_name]")
+            f"Usage: python3 {sys.argv[0]} logisim_file verilog_file [circuit_name]")
         sys.exit(1)
 
     xml_file = sys.argv[1]
