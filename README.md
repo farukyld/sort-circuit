@@ -12,11 +12,14 @@ cd "sort-circuit"
 
 you will be able to open [.circ files](https://github.com/farukyld/sort-circuit/tree/main/logisim_files) with [logisim-evolution](https://github.com/logisim-evolution/logisim-evolution/releases)
 
-for example to open the datapath.circ
+to open sort_circuit.circ
 
 ```bash
-path/to/where/you/installed/logisim-evolution.exe "logisim_files/datapath.circ"
+path/to/where/you/installed/logisim-evolution.exe "logisim_files/sort_circuit.circ"
 ```
+
+when you type the above line, logisim is going to want you to specify the memory_module library via a dialog box, you should select the memory_module.circ file.
+
 
 
 ### the [circuit generator](https://github.com/faruk.yld/sort-circuit/python_scripts/logisim_circuit_generator/) script(s)

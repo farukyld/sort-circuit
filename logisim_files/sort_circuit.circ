@@ -2171,10 +2171,11 @@
       <a name="label" val="q_read_return_data"/>
       <a name="width" val="32"/>
     </comp>
-    <comp lib="0" loc="(1610,90)" name="Pin">
+    <comp lib="0" loc="(1610,100)" name="Pin">
       <a name="appearance" val="NewPins"/>
       <a name="facing" val="south"/>
       <a name="label" val="arr_size"/>
+      <a name="radix" val="10unsigned"/>
       <a name="width" val="5"/>
     </comp>
     <comp lib="0" loc="(1700,370)" name="Tunnel">
@@ -2446,8 +2447,8 @@
     <wire from="(1520,950)" to="(1530,950)"/>
     <wire from="(1530,330)" to="(1830,330)"/>
     <wire from="(1540,270)" to="(1830,270)"/>
+    <wire from="(1610,100)" to="(1610,440)"/>
     <wire from="(1610,440)" to="(1780,440)"/>
-    <wire from="(1610,90)" to="(1610,440)"/>
     <wire from="(1740,390)" to="(1760,390)"/>
     <wire from="(1790,390)" to="(1830,390)"/>
     <wire from="(1820,910)" to="(1830,910)"/>
