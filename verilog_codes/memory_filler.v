@@ -22,7 +22,7 @@ module memory_filler#(
  	output [DATA_WDTH-1:0] w_data,
 
  	input b_valid,
- 	input [RESP_WDTH-1:0]b_resp,
+ 	input [RESP_WDTH-1:0] b_resp,
  	output b_ready,
 
 );
