@@ -35,9 +35,12 @@ def parse_xml(xml_file, chosen_circuit=None):
                         circuits[circuit_name]['inputs'].append((label, width))
 
     if chosen_circuit is None or chosen_circuit not in circuits:
-        print("Available circuits:", ', '.join(circuits.keys()))
-        chosen_circuit = input(
-            "Please enter the name of the circuit to generate Verilog code for: ")
+        if len(circuits) == 1:
+            chosen_circuit=list(circuits)[0]
+        else:
+            print("Available circuits:", ', '.join(circuits.keys()))
+            chosen_circuit = input(
+                "Please enter the name of the circuit to generate Verilog code for: ")
 
     content = circuits.get(chosen_circuit, {'inputs': [], 'outputs': []})
 

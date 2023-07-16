@@ -68,19 +68,10 @@
       <a name="facing" val="east"/>
       <a name="label" val="clk"/>
     </comp>
-    <comp lib="0" loc="(1010,530)" name="Tunnel">
+    <comp lib="0" loc="(1030,520)" name="Tunnel">
       <a name="facing" val="east"/>
       <a name="label" val="arr_size"/>
-      <a name="width" val="4"/>
-    </comp>
-    <comp lib="0" loc="(1010,540)" name="Ground"/>
-    <comp lib="0" loc="(1030,520)" name="Splitter">
-      <a name="bit1" val="0"/>
-      <a name="bit2" val="0"/>
-      <a name="bit3" val="0"/>
-      <a name="bit4" val="1"/>
-      <a name="facing" val="west"/>
-      <a name="incoming" val="5"/>
+      <a name="width" val="5"/>
     </comp>
     <comp lib="0" loc="(1070,150)" name="Tunnel">
       <a name="facing" val="east"/>
@@ -163,11 +154,11 @@
       <a name="label" val="submodule_start"/>
     </comp>
     <comp lib="0" loc="(1290,920)" name="Tunnel">
-      <a name="label" val="done"/>
-    </comp>
-    <comp lib="0" loc="(1290,920)" name="Tunnel">
       <a name="facing" val="east"/>
       <a name="label" val="sdone"/>
+    </comp>
+    <comp lib="0" loc="(1290,920)" name="Tunnel">
+      <a name="label" val="done"/>
     </comp>
     <comp lib="0" loc="(1290,970)" name="Tunnel">
       <a name="facing" val="east"/>
@@ -257,11 +248,11 @@
     <comp lib="0" loc="(170,290)" name="Pin">
       <a name="appearance" val="NewPins"/>
       <a name="label" val="arr_size"/>
-      <a name="width" val="4"/>
+      <a name="width" val="5"/>
     </comp>
     <comp lib="0" loc="(170,290)" name="Tunnel">
       <a name="label" val="arr_size"/>
-      <a name="width" val="4"/>
+      <a name="width" val="5"/>
     </comp>
     <comp lib="0" loc="(180,110)" name="Pin">
       <a name="appearance" val="NewPins"/>

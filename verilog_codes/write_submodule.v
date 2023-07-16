@@ -1,27 +1,32 @@
 
-module write_submodule(
+module write_submodule#(
+    parameter ADDR_WDTH = 4,
+    parameter DATA_WDTH = ADDR_WDTH-12,
+    parameter RESP_WDTH = 1)
+
+(
  	input clk,
  	input rst_n,
 
 	// memory interface
  	output w_valid,
 	input w_ready,
-	output [31:0] w_data,
+	output [DATA_WDTH-1:0] w_data,
  	
 	input b_valid,
  	output b_ready,
- 	input b_resp,
+ 	input [RESP_WDTH-1:0] b_resp,
  	
  	output aw_valid,
 	input aw_ready,
- 	output [3:0] aw_address,
+ 	output [ADDR_WDTH-1:0] aw_address,
  	
 	// supermodule interface
 	input start,
- 	input [31:0] data,
- 	input [3:0] addr,
+ 	input [DATA_WDTH-1:0] data,
+ 	input [ADDR_WDTH-1:0] addr,
  	output done,
- 	output resp,
+ 	output [RESP_WDTH-1:0] resp,
 	
 );
 // module body here

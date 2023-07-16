@@ -1,23 +1,28 @@
 
-module memory_filler(
+module memory_filler#(
+    parameter ADDR_WDTH = 4,
+    parameter DATA_WDTH = 32,
+    parameter RESP_WDTH = 1)
+
+(
  	input clk,
  	input rst_n,
 
 	// user interface
-	input [3:0] arr_size,
+	input [ADDR_WDTH:0] arr_size,
 	output done,
 
 	// memory interface
  	output aw_valid,
  	input aw_ready,
- 	output [3:0] aw_address,
+ 	output [ADDR_WDTH-1:0] aw_address,
 
  	output w_valid,
  	input w_ready,
- 	output [31:0] w_data,
+ 	output [DATA_WDTH-1:0] w_data,
 
  	input b_valid,
- 	input b_resp,
+ 	input [RESP_WDTH-1:0]b_resp,
  	output b_ready,
 
 );
