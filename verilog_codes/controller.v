@@ -43,7 +43,7 @@ module controller #(
  	output sl_j_to_arg_read_addr,
  	output ld_arg_read_addr,
  	
-    output switch_case_def
+    output swich_case_default
 );
 
 
@@ -181,7 +181,7 @@ assign ar_valid = is_cs_read_function | is_cs_wait_ar_ready;
 assign done = is_cs_done;
 assign error = is_cs_err;
 
-assign switch_case_def = is_cs_swich_case_default;
+assign swich_case_default = is_cs_swich_case_default;
 
 // internal control logic
 assign sl_to_arg_return_state = is_cs_read_arr_j;
