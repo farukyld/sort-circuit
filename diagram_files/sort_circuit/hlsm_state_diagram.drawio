@@ -1,6 +1,6 @@
 <mxfile host="65bd71144e">
     <diagram name="Page-1" id="099fd60b-425b-db50-ffb0-6b813814b670">
-        <mxGraphModel dx="1459" dy="626" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" background="none" math="0" shadow="0">
+        <mxGraphModel dx="1820" dy="804" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" background="none" math="0" shadow="0">
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
@@ -101,6 +101,11 @@
                             <mxPoint x="290" y="1500"/>
                             <mxPoint x="520" y="1470"/>
                         </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="394" value="&lt;span style=&quot;font-size: 15px;&quot;&gt;write_submodule.b_response&lt;/span&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="178">
+                    <mxGeometry x="-0.2944" y="1" relative="1" as="geometry">
+                        <mxPoint x="-57" y="-41" as="offset"/>
                     </mxGeometry>
                 </mxCell>
                 <mxCell id="161" value="" style="curved=1;endArrow=classic;html=1;fontSize=15;fontColor=#FF0000;fontStyle=0" parent="1" source="155" target="10" edge="1">
@@ -294,7 +299,7 @@
                 <mxCell id="326" style="html=1;fontSize=15;fontColor=#0000FF;" parent="1" source="107" target="155" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
-                <mxCell id="327" value="&lt;span style=&quot;color: rgb(240, 240, 240);&quot;&gt;elem2insert_gt_elem2compare&lt;/span&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=15;fontColor=#0000FF;" parent="326" vertex="1" connectable="0">
+                <mxCell id="327" value="&lt;span style=&quot;&quot;&gt;elem2insert_gt_elem2compare&lt;/span&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=15;" parent="326" vertex="1" connectable="0">
                     <mxGeometry x="0.4843" y="-15" relative="1" as="geometry">
                         <mxPoint x="94" y="339" as="offset"/>
                     </mxGeometry>
@@ -374,6 +379,11 @@
                         <mxPoint x="84.18157295254014" y="1709.0784065022326" as="sourcePoint"/>
                     </mxGeometry>
                 </mxCell>
+                <mxCell id="391" value="&lt;span style=&quot;font-size: 15px;&quot;&gt;write_submodule.b_response&lt;/span&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="379">
+                    <mxGeometry x="-0.1208" y="-2" relative="1" as="geometry">
+                        <mxPoint x="-28" y="8" as="offset"/>
+                    </mxGeometry>
+                </mxCell>
                 <mxCell id="383" style="edgeStyle=none;html=1;" parent="1" source="380" target="149" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
@@ -405,6 +415,27 @@
                 </mxCell>
                 <mxCell id="144" value="&lt;font color=&quot;#66b2ff&quot; face=&quot;Courier New&quot;&gt;&lt;b&gt;write_submodule.start := '1'&lt;br&gt;write_submodule.addr := j + 1&lt;br&gt;write_Submodule.data :=&amp;nbsp;&lt;/b&gt;&lt;/font&gt;&lt;b style=&quot;color: rgb(102, 178, 255); font-family: &amp;quot;Courier New&amp;quot;;&quot;&gt;elem2compare&lt;/b&gt;" style="text;whiteSpace=wrap;html=1;fontSize=15;;" parent="386" vertex="1">
                     <mxGeometry x="10" y="80" width="345" height="70" as="geometry"/>
+                </mxCell>
+                <mxCell id="387" style="edgeStyle=none;html=1;" edge="1" parent="1" source="132" target="388">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="210" y="1650" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="389" value="&lt;span style=&quot;font-size: 15px;&quot;&gt;write_submodule.b_response'&lt;/span&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="387">
+                    <mxGeometry x="-0.4516" y="-3" relative="1" as="geometry">
+                        <mxPoint x="24" y="-13" as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="388" value="&lt;font style=&quot;font-size: 15px;&quot;&gt;err&lt;br&gt;&lt;/font&gt;" style="ellipse;whiteSpace=wrap;html=1;rounded=0;" vertex="1" parent="1">
+                    <mxGeometry x="120" y="1550" width="110" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="392" style="edgeStyle=none;html=1;" edge="1" parent="1" source="149" target="388">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="393" value="&lt;span style=&quot;font-size: 15px;&quot;&gt;write_submodule.b_response'&lt;/span&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="392">
+                    <mxGeometry x="0.2658" y="-4" relative="1" as="geometry">
+                        <mxPoint y="-5" as="offset"/>
+                    </mxGeometry>
                 </mxCell>
             </root>
         </mxGraphModel>
