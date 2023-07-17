@@ -47,31 +47,31 @@ module controller #(
 );
 
 
-localparam WAIT_START = 4'd0;
-localparam OUTER_LOOP_CHECK = 4'd1;
-localparam DONE = 4'd2;
-localparam INNER_LOOP_CHECK = 4'd3;
-localparam DECRMT_J = 4'd4;
-localparam INC_I = 4'd5;
-localparam ASSIGN_I = 4'd6;
-localparam ASSIGN_J = 4'd7;
-localparam WAIT_AR_READY = 4'd8;
-localparam WAIT_R_VALID = 4'd9;
-localparam ERR = 4'd10;
-localparam COMPLETE_AR = 4'd11;
-localparam READ_FUNCTION = 4'd12;
-localparam PROCESS_R_DATA_RESP = 4'd13;
-localparam RETURN_READ_FN = 4'd14;
-localparam READ_ARR_J = 4'd15;
-localparam READ_ARR_I = 4'd16;
-localparam ASSIGN_ELEM2INSERT = 4'd17;
-localparam ASSIGN_ELEM2COMPARE = 4'd18;
-localparam CHECK_IF_CORRECT_PLACE = 4'd19;
-localparam WAIT_SUBMODULE_RETURN1 = 4'd20;
-localparam SHIFT_ELEM2INSERT_LEFT = 4'd21;
-localparam WAIT_SUBMODULE_RETURN2 = 4'd22;
-localparam SHIFT_ELEM2COMPARE_RIGHT = 4'd23;
-localparam SWICH_CASE_DEFAULT = 4'd24;
+localparam WAIT_START = 'd0;
+localparam OUTER_LOOP_CHECK = 'd1;
+localparam DONE = 'd2;
+localparam INNER_LOOP_CHECK = 'd3;
+localparam DECRMT_J = 'd4;
+localparam INC_I = 'd5;
+localparam ASSIGN_I = 'd6;
+localparam ASSIGN_J = 'd7;
+localparam WAIT_AR_READY = 'd8;
+localparam WAIT_R_VALID = 'd9;
+localparam ERR = 'd10;
+localparam COMPLETE_AR = 'd11;
+localparam READ_FUNCTION = 'd12;
+localparam PROCESS_R_DATA_RESP = 'd13;
+localparam RETURN_READ_FN = 'd14;
+localparam READ_ARR_J = 'd15;
+localparam READ_ARR_I = 'd16;
+localparam ASSIGN_ELEM2INSERT = 'd17;
+localparam ASSIGN_ELEM2COMPARE = 'd18;
+localparam CHECK_IF_CORRECT_PLACE = 'd19;
+localparam WAIT_SUBMODULE_RETURN1 = 'd20;
+localparam SHIFT_ELEM2INSERT_LEFT = 'd21;
+localparam WAIT_SUBMODULE_RETURN2 = 'd22;
+localparam SHIFT_ELEM2COMPARE_RIGHT = 'd23;
+localparam SWICH_CASE_DEFAULT = 'd24;
 
 
 wire sl_to_arg_return_state;
@@ -191,7 +191,7 @@ assign sl_to_state = is_cs_return_read_fn;
 assign next_state = sl_to_state ? arg_return_state : gen_state;
 
 
-// state transition
+// state transition and synchron blocks
 always@ (posedge clk or negedge rst_n) begin
     if (!rst_n) begin
         current_state <= WAIT_START;
