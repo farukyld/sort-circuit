@@ -42,16 +42,20 @@ module controller #(
  	output ld_elem2compare,
  	output sl_j_to_arg_read_addr,
  	output ld_arg_read_addr,
+ 	
+    output switch_case_def
 
 );
 
 
 wire sl_to_arg_return_state;
 wire ld_arg_return_state;
-reg [STATE_WDTH-1:0] arg_return_state;
+reg [STATE_WDTH-1:0] arg_return_state, next_return_state;
 
 wire sl_to_state;
 reg [STATE_WDTH-1:0] current_state;
+reg [STATE_WDTH-1:0] gen_state;
+wire [STATE_WDTH-1:0] next_state;
 
 localparam WAIT_START = 4'd0;
 localparam OUTER_LOOP_CHECK = 4'd1;
@@ -103,10 +107,11 @@ wire is_cs_wait_start,
 	is_cs_wait_submodule_return1,
 	is_cs_shift_elem2insert_left,
 	is_cs_wait_submodule_return2,
-	is_cs_shift_elem2compare_right;
+	is_cs_shift_elem2compare_right,
 	is_cs_swich_case_default;
 
-
+// decode the state in an inefficient way. 
+// but this will enable to use them to generate outputs easily.
 assign is_cs_wait_start
  = WAIT_START == current_state;
 assign is_cs_outer_loop_check
@@ -160,138 +165,135 @@ assign is_cs_swich_case_default
 
 
 // output logic
-ld_return_read_data = is_cs_process_r_data_resp;
-sl_j_plus_1_to_write_addr = is_cs_shift_elem2compare_right;
-sl_elem2compare_to_write_data = is_cs_shift_elem2compare_right;
-sl_incd_to_i = is_cs_inc_i;
-ld_i = is_cs_inc_i | is_cs_assign_i;
-sl_decrd_to_j = is_cs_decrmt_j;
-ld_j = is_cs_decrmt_j | is_cs_assign_j;
-ld_elem2insert = is_cs_assign_elem2insert;
-ld_elem2compare = is_cs_assign_elem2compare;
-sl_j_to_arg_read_addr = is_cs_read_arr_j;
-ld_arg_read_addr = is_cs_read_arr_i | is_cs_read_arr_j;
-write_submodule_start = is_cs_shift_elem2compare_right | is_cs_shift_elem2insert_left;
-r_ready = is_cs_complete_ar | is_cs_wait_r_valid;
-ar_valid = is_cs_read_function | is_cs_wait_ar_ready;
-done = is_cs_done;
-error = is_cs_err;
+assign ld_return_read_data = is_cs_process_r_data_resp;
+assign sl_j_plus_1_to_write_addr = is_cs_shift_elem2compare_right;
+assign sl_elem2compare_to_write_data = is_cs_shift_elem2compare_right;
+assign sl_incd_to_i = is_cs_inc_i;
+assign ld_i = is_cs_inc_i | is_cs_assign_i;
+assign sl_decrd_to_j = is_cs_decrmt_j;
+assign ld_j = is_cs_decrmt_j | is_cs_assign_j;
+assign ld_elem2insert = is_cs_assign_elem2insert;
+assign ld_elem2compare = is_cs_assign_elem2compare;
+assign sl_j_to_arg_read_addr = is_cs_read_arr_j;
+assign ld_arg_read_addr = is_cs_read_arr_i | is_cs_read_arr_j;
+assign write_submodule_start 
+    = is_cs_shift_elem2compare_right | is_cs_shift_elem2insert_left;
+assign r_ready = is_cs_complete_ar | is_cs_wait_r_valid;
+assign ar_valid = is_cs_read_function | is_cs_wait_ar_ready;
+assign done = is_cs_done;
+assign error = is_cs_err;
+
+assign switch_case_def = is_cs_swich_case_default;
 
 // internal control logic
-sl_to_arg_return_state = is_cs_read_arr_j;
-ld_arg_return_state = is_cs_read_arr_i | is_cs_read_arr_j;
-sl_to_state = is_cs_return_read_fn;
+assign sl_to_arg_return_state = is_cs_read_arr_j;
+assign ld_arg_return_state = is_cs_read_arr_i | is_cs_read_arr_j;
+assign sl_to_state = is_cs_return_read_fn;
+
+assign next_state = sl_to_state ? arg_return_state : gen_state;
 
 
-// state transition logic
+// state transition
 always@ (posedge clk or negedge rst_n) begin
-    if (!rst_n)
-        // Insert reset logic here
-    else
-        case (state)
-            WAIT_START: begin
-                // Insert logic here
-            end
-            
-            OUTER_LOOP_CHECK: begin
-                // Insert logic here
-            end
-            
-            DONE: begin
-                // Insert logic here
-            end
-            
-            INNER_LOOP_CHECK: begin
-                // Insert logic here
-            end
-            
-            DECRMT_J: begin
-                // Insert logic here
-            end
-            
-            INC_I: begin
-                // Insert logic here
-            end
-            
-            ASSIGN_I: begin
-                // Insert logic here
-            end
-            
-            ASSIGN_J: begin
-                // Insert logic here
-            end
-            
-            WAIT_AR_READY: begin
-                // Insert logic here
-            end
-            
-            WAIT_R_VALID: begin
-                // Insert logic here
-            end
-            
-            ERR: begin
-                // Insert logic here
-            end
-            
-            COMPLETE_AR: begin
-                // Insert logic here
-            end
-            
-            READ_FUNCTION: begin
-                // Insert logic here
-            end
-            
-            PROCESS_R_DATA_RESP: begin
-                // Insert logic here
-            end
-            
-            RETURN_READ_FN: begin
-                // Insert logic here
-            end
-            
-            READ_ARR_J: begin
-                // Insert logic here
-            end
-            
-            READ_ARR_I: begin
-                // Insert logic here
-            end
-            
-            ASSIGN_ELEM2INSERT: begin
-                // Insert logic here
-            end
-            
-            ASSIGN_ELEM2COMPARE: begin
-                // Insert logic here
-            end
-            
-            CHECK_IF_CORRECT_PLACE: begin
-                // Insert logic here
-            end
-            
-            WAIT_SUBMODULE_RETURN1: begin
-                // Insert logic here
-            end
-            
-            SHIFT_ELEM2INSERT_LEFT: begin
-                // Insert logic here
-            end
-            
-            WAIT_SUBMODULE_RETURN2: begin
-                // Insert logic here
-            end
-            
-            SHIFT_ELEM2COMPARE_RIGHT: begin
-                // Insert logic here
-            end
-
-            default: begin
-                // Optional: handle unexpected state
-            end
-        endcase
+    if (!rst_n) begin
+        current_state <= WAIT_START;
+        arg_return_state <= 'd0;
+    end else begin
+        current_state <= next_state;
+        if (ld_arg_return_state) 
+            arg_return_state = sl_to_arg_return_state ? 
+                ASSIGN_ELEM2COMPARE : ASSIGN_ELEM2INSERT;
+    end
 end
 
 
+// next state generation
+always@ ( * ) begin
+    case (state)
+        WAIT_START: 
+            gen_state <= start ? ASSIGN_I : WAIT_START;
+
+        ASSIGN_I:
+            gen_state <= OUTER_LOOP_CHECK;
+        
+        OUTER_LOOP_CHECK: 
+            gen_state <= i_lt_arr_size ? READ_ARR_I : DONE;
+        
+        DONE:
+            gen_state <= DONE;
+        
+        READ_ARR_I:
+            gen_state <= READ_FUNCTION; 
+        
+        ASSIGN_ELEM2INSERT: 
+            gen_state <= ASSIGN_J;
+        
+        ASSIGN_J:
+            gen_state <= INNER_LOOP_CHECK;
+
+        INNER_LOOP_CHECK:
+            gen_state <= j_gte_0 ? READ_ARR_J : INC_I;
+        
+        READ_ARR_J:
+            gen_state <= READ_FUNCTION; 
+        
+        ASSIGN_ELEM2COMPARE: 
+            gen_state <= CHECK_IF_CORRECT_PLACE;
+
+        CHECK_IF_CORRECT_PLACE: 
+            gen_state <= elem2insert_gt_elem2compare ? 
+                INC_I : SHIFT_ELEM2INSERT_LEFT;
+
+        SHIFT_ELEM2INSERT_LEFT:
+            gen_state <= WAIT_SUBMODULE_RETURN1;
+
+        WAIT_SUBMODULE_RETURN1: 
+            gen_state <= write_submodule_done ? 
+                SHIFT_ELEM2COMPARE_RIGHT : WAIT_SUBMODULE_RETURN1;
+        
+        SHIFT_ELEM2COMPARE_RIGHT:
+            gen_state <= write_submodule_b_resp ?
+                WAIT_SUBMODULE_RETURN2 : ERR;
+        
+        WAIT_SUBMODULE_RETURN2: 
+            gen_state <= write_submodule_done ? 
+                DECRMT_J : WAIT_SUBMODULE_RETURN2;
+
+        DECRMT_J:
+            gen_state <= write_submodule_b_resp ? 
+                INNER_LOOP_CHECK : ERR;
+        
+        INC_I: 
+            gen_state <= OUTER_LOOP_CHECK;
+
+        READ_FUNCTION: 
+            gen_state <= WAIT_AR_READY;
+
+        WAIT_AR_READY: 
+            gen_state <= ar_ready ? 
+                COMPLETE_AR : WAIT_AR_READY;
+
+        COMPLETE_AR: 
+            gen_state <= WAIT_R_VALID;
+        
+        WAIT_R_VALID: 
+            gen_state <= r_valid ? 
+                PROCESS_R_DATA_RESP : WAIT_R_VALID;
+
+        PROCESS_R_DATA_RESP:
+            gen_state <= r_resp ? 
+                RETURN_READ_FN : ERR;
+        
+        ERR: 
+            gen_state <= ERR;
+        
+        RETURN_READ_FN: 
+            gen_state <= x;
+
+        default:
+            gen_state <= SWICH_CASE_DEFAULT;
+    endcase
+end
 
 endmodule
     
