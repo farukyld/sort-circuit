@@ -44,18 +44,8 @@ module controller #(
  	output ld_arg_read_addr,
  	
     output switch_case_def
-
 );
 
-
-wire sl_to_arg_return_state;
-wire ld_arg_return_state;
-reg [STATE_WDTH-1:0] arg_return_state, next_return_state;
-
-wire sl_to_state;
-reg [STATE_WDTH-1:0] current_state;
-reg [STATE_WDTH-1:0] gen_state;
-wire [STATE_WDTH-1:0] next_state;
 
 localparam WAIT_START = 4'd0;
 localparam OUTER_LOOP_CHECK = 4'd1;
@@ -84,6 +74,15 @@ localparam SHIFT_ELEM2COMPARE_RIGHT = 4'd23;
 localparam SWICH_CASE_DEFAULT = 4'd24;
 
 
+wire sl_to_arg_return_state;
+wire ld_arg_return_state;
+reg [STATE_WDTH-1:0] arg_return_state, next_return_state;
+
+wire sl_to_state;
+reg [STATE_WDTH-1:0] current_state = WAIT_START;
+reg [STATE_WDTH-1:0] gen_state;
+wire [STATE_WDTH-1:0] next_state;
+
 wire is_cs_wait_start,
 	is_cs_outer_loop_check,
 	is_cs_done,
@@ -110,8 +109,7 @@ wire is_cs_wait_start,
 	is_cs_shift_elem2compare_right,
 	is_cs_swich_case_default;
 
-// decode the state in an inefficient way. 
-// but this will enable to use them to generate outputs easily.
+// decode the state to generate outputs easily.
 assign is_cs_wait_start
  = WAIT_START == current_state;
 assign is_cs_outer_loop_check
@@ -201,7 +199,7 @@ always@ (posedge clk or negedge rst_n) begin
     end else begin
         current_state <= next_state;
         if (ld_arg_return_state) 
-            arg_return_state = sl_to_arg_return_state ? 
+            arg_return_state <= sl_to_arg_return_state ? 
                 ASSIGN_ELEM2COMPARE : ASSIGN_ELEM2INSERT;
     end
 end
@@ -296,4 +294,3 @@ always@ ( * ) begin
 end
 
 endmodule
-    
