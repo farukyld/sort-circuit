@@ -207,7 +207,7 @@ end
 
 // next state generation
 always@ ( * ) begin
-    case (state)
+    case (current_state)
         WAIT_START: 
             gen_state <= start ? ASSIGN_I : WAIT_START;
 
