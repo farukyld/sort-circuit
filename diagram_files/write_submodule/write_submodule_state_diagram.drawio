@@ -1,13 +1,13 @@
 <mxfile host="65bd71144e">
     <diagram id="gbK5J9_8tIpVUCVtw70C" name="Page-1">
-        <mxGraphModel dx="1784" dy="-296" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+        <mxGraphModel dx="1632" dy="-438" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
                 <mxCell id="3" value="" style="edgeStyle=none;html=1;" parent="1" source="22" target="41" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
-                <mxCell id="74" value="start" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=15;fontColor=#FFFFFF;" parent="3" vertex="1" connectable="0">
+                <mxCell id="74" value="start" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=15;" parent="3" vertex="1" connectable="0">
                     <mxGeometry x="-0.4835" y="1" relative="1" as="geometry">
                         <mxPoint as="offset"/>
                     </mxGeometry>
@@ -18,7 +18,7 @@
                 <mxCell id="7" value="" style="edgeStyle=none;html=1;fontSize=15;" parent="1" source="15" target="58" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
-                <mxCell id="80" value="&lt;span style=&quot;color: rgb(240, 240, 240);&quot;&gt;w_ready*aw_ready&lt;/span&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=15;fontColor=#FFFFFF;" parent="7" vertex="1" connectable="0">
+                <mxCell id="80" value="&lt;span style=&quot;&quot;&gt;w_ready*aw_ready&lt;/span&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=15;" parent="7" vertex="1" connectable="0">
                     <mxGeometry x="-0.5164" y="-2" relative="1" as="geometry">
                         <mxPoint as="offset"/>
                     </mxGeometry>
@@ -61,7 +61,7 @@
                 <mxCell id="24" value="&lt;font style=&quot;font-size: 15px;&quot;&gt;complete_w_wait_aw_ready&lt;br&gt;&lt;/font&gt;" style="ellipse;whiteSpace=wrap;html=1;rounded=0;" parent="23" vertex="1">
                     <mxGeometry x="40" y="10" width="210" height="80" as="geometry"/>
                 </mxCell>
-                <mxCell id="25" value="&lt;font face=&quot;Courier New&quot;&gt;&lt;b&gt;&lt;span style=&quot;color: rgb(102, 178, 255); font-size: 15px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: center; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; float: none; display: inline !important;&quot;&gt;w_valid := '0'&lt;/span&gt;&lt;/b&gt;&lt;/font&gt;&lt;font face=&quot;Courier New&quot;&gt;&lt;span style=&quot;orphans: 2; text-align: center; text-indent: 0px; widows: 2; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; float: none; display: inline !important;&quot;&gt;&lt;br&gt;&lt;font color=&quot;#66b2ff&quot;&gt;&lt;b&gt;&amp;nbsp;&lt;/b&gt;&lt;/font&gt;&lt;/span&gt;&lt;/font&gt;" style="text;whiteSpace=wrap;html=1;fontSize=15;fontColor=#FFFFFF;" parent="23" vertex="1">
+                <mxCell id="25" value="&lt;font face=&quot;Courier New&quot;&gt;&lt;b&gt;&lt;span style=&quot;color: rgb(102, 178, 255); font-size: 15px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: center; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; float: none; display: inline !important;&quot;&gt;w_valid := '0'&lt;/span&gt;&lt;/b&gt;&lt;/font&gt;&lt;font face=&quot;Courier New&quot;&gt;&lt;span style=&quot;orphans: 2; text-align: center; text-indent: 0px; widows: 2; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; float: none; display: inline !important;&quot;&gt;&lt;br&gt;&lt;font color=&quot;#66b2ff&quot;&gt;&lt;b&gt;&amp;nbsp;&lt;/b&gt;&lt;/font&gt;&lt;/span&gt;&lt;/font&gt;" style="text;whiteSpace=wrap;html=1;fontSize=15;" parent="23" vertex="1">
                     <mxGeometry x="10" y="80" width="140" height="30" as="geometry"/>
                 </mxCell>
                 <mxCell id="26" style="edgeStyle=orthogonalEdgeStyle;curved=1;html=1;fontSize=15;" parent="23" source="24" target="24" edge="1">
@@ -110,7 +110,7 @@
                 <mxCell id="43" value="" style="html=1;fontSize=15;" parent="1" source="45" target="66" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
-                <mxCell id="84" value="b_valid" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=15;fontColor=#FFFFFF;" parent="43" vertex="1" connectable="0">
+                <mxCell id="84" value="b_valid" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=15;" parent="43" vertex="1" connectable="0">
                     <mxGeometry x="-0.6133" relative="1" as="geometry">
                         <mxPoint y="8" as="offset"/>
                     </mxGeometry>
@@ -124,7 +124,7 @@
                 <mxCell id="61" value="&lt;font style=&quot;font-size: 15px;&quot;&gt;complete_aw&lt;br&gt;&lt;/font&gt;" style="ellipse;whiteSpace=wrap;html=1;rounded=0;" parent="60" vertex="1">
                     <mxGeometry x="90" width="110" height="80" as="geometry"/>
                 </mxCell>
-                <mxCell id="62" value="&lt;font face=&quot;Courier New&quot;&gt;&lt;b&gt;&lt;span style=&quot;color: rgb(102, 178, 255); font-size: 15px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: center; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; float: none; display: inline !important;&quot;&gt;aw_valid := '0'&lt;/span&gt;&lt;/b&gt;&lt;/font&gt;&lt;font face=&quot;Courier New&quot;&gt;&lt;span style=&quot;orphans: 2; text-align: center; text-indent: 0px; widows: 2; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; float: none; display: inline !important;&quot;&gt;&lt;br&gt;&lt;/span&gt;&lt;/font&gt;&lt;b style=&quot;font-family: &amp;quot;Courier New&amp;quot;;&quot;&gt;&lt;span style=&quot;color: rgb(102, 178, 255); text-align: center;&quot;&gt;b_ready := '1'&lt;/span&gt;&lt;/b&gt;&lt;font face=&quot;Courier New&quot;&gt;&lt;span style=&quot;orphans: 2; text-align: center; text-indent: 0px; widows: 2; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; float: none; display: inline !important;&quot;&gt;&lt;font color=&quot;#66b2ff&quot;&gt;&lt;b&gt;&amp;nbsp;&lt;/b&gt;&lt;/font&gt;&lt;/span&gt;&lt;/font&gt;" style="text;whiteSpace=wrap;html=1;fontSize=15;fontColor=#FFFFFF;" parent="60" vertex="1">
+                <mxCell id="62" value="&lt;font face=&quot;Courier New&quot;&gt;&lt;b&gt;&lt;span style=&quot;color: rgb(102, 178, 255); font-size: 15px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: center; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; float: none; display: inline !important;&quot;&gt;aw_valid := '0'&lt;/span&gt;&lt;/b&gt;&lt;/font&gt;&lt;font face=&quot;Courier New&quot;&gt;&lt;span style=&quot;orphans: 2; text-align: center; text-indent: 0px; widows: 2; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; float: none; display: inline !important;&quot;&gt;&lt;br&gt;&lt;/span&gt;&lt;/font&gt;&lt;b style=&quot;font-family: &amp;quot;Courier New&amp;quot;;&quot;&gt;&lt;span style=&quot;color: rgb(102, 178, 255); text-align: center;&quot;&gt;b_ready := '1'&lt;/span&gt;&lt;/b&gt;&lt;font face=&quot;Courier New&quot;&gt;&lt;span style=&quot;orphans: 2; text-align: center; text-indent: 0px; widows: 2; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; float: none; display: inline !important;&quot;&gt;&lt;font color=&quot;#66b2ff&quot;&gt;&lt;b&gt;&amp;nbsp;&lt;/b&gt;&lt;/font&gt;&lt;/span&gt;&lt;/font&gt;" style="text;whiteSpace=wrap;html=1;fontSize=15;" parent="60" vertex="1">
                     <mxGeometry y="70" width="140" height="50" as="geometry"/>
                 </mxCell>
                 <mxCell id="63" style="edgeStyle=orthogonalEdgeStyle;curved=1;html=1;fontSize=15;" parent="1" source="45" target="45" edge="1">
@@ -140,13 +140,13 @@
                     </mxGeometry>
                 </mxCell>
                 <mxCell id="68" value="" style="group" parent="1" vertex="1" connectable="0">
-                    <mxGeometry x="-515" y="2090" width="290" height="110" as="geometry"/>
+                    <mxGeometry x="-515" y="2090" width="310" height="110" as="geometry"/>
                 </mxCell>
                 <mxCell id="66" value="&lt;font style=&quot;font-size: 15px;&quot;&gt;process_b_resp&lt;br&gt;&lt;/font&gt;" style="ellipse;whiteSpace=wrap;html=1;rounded=0;" parent="68" vertex="1">
                     <mxGeometry width="140" height="80" as="geometry"/>
                 </mxCell>
-                <mxCell id="67" value="&lt;font face=&quot;Courier New&quot;&gt;&lt;font color=&quot;#66b2ff&quot;&gt;&lt;b&gt;b_ready := '0'&amp;nbsp;&lt;br&gt;r_b_resp := b_resp&lt;br&gt;&lt;/b&gt;&lt;/font&gt;&lt;/font&gt;" style="text;whiteSpace=wrap;html=1;fontSize=15;fontColor=#FFFFFF;" parent="68" vertex="1">
-                    <mxGeometry x="111" y="61" width="179" height="49" as="geometry"/>
+                <mxCell id="67" value="&lt;font face=&quot;Courier New&quot;&gt;&lt;font color=&quot;#66b2ff&quot;&gt;&lt;b&gt;b_ready := '0'&amp;nbsp;&lt;br&gt;reg_b_resp := b_resp&lt;br&gt;&lt;/b&gt;&lt;/font&gt;&lt;/font&gt;" style="text;whiteSpace=wrap;html=1;fontSize=15;" parent="68" vertex="1">
+                    <mxGeometry x="111" y="61" width="199" height="49" as="geometry"/>
                 </mxCell>
                 <mxCell id="76" value="" style="group" parent="1" vertex="1" connectable="0">
                     <mxGeometry x="-545" y="1760" width="258.38" height="125.33999999999992" as="geometry"/>
@@ -154,29 +154,8 @@
                 <mxCell id="58" value="&lt;font style=&quot;font-size: 15px;&quot;&gt;complete_aw_and_w&lt;br&gt;&lt;/font&gt;" style="ellipse;whiteSpace=wrap;html=1;rounded=0;" parent="76" vertex="1">
                     <mxGeometry width="181.62162162162159" height="74.66666666666667" as="geometry"/>
                 </mxCell>
-                <mxCell id="59" value="&lt;font face=&quot;Courier New&quot;&gt;&lt;b&gt;&lt;span style=&quot;color: rgb(102, 178, 255); font-size: 15px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: center; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; float: none; display: inline !important;&quot;&gt;aw_valid := '0'&lt;/span&gt;&lt;/b&gt;&lt;/font&gt;&lt;font face=&quot;Courier New&quot;&gt;&lt;span style=&quot;orphans: 2; text-align: center; text-indent: 0px; widows: 2; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; float: none; display: inline !important;&quot;&gt;&lt;br&gt;&lt;/span&gt;&lt;/font&gt;&lt;font face=&quot;Courier New&quot;&gt;&lt;b&gt;&lt;span style=&quot;color: rgb(102, 178, 255); text-align: center;&quot;&gt;w_valid := '0'&lt;br&gt;&lt;/span&gt;&lt;/b&gt;&lt;/font&gt;&lt;b style=&quot;font-family: &amp;quot;Courier New&amp;quot;;&quot;&gt;&lt;span style=&quot;color: rgb(102, 178, 255); text-align: center;&quot;&gt;b_ready := '1'&lt;/span&gt;&lt;/b&gt;&lt;font face=&quot;Courier New&quot;&gt;&lt;span style=&quot;text-align: center;&quot;&gt;&lt;br&gt;&lt;/span&gt;&lt;/font&gt;" style="text;whiteSpace=wrap;html=1;fontSize=15;fontColor=#FFFFFF;" parent="76" vertex="1">
+                <mxCell id="59" value="&lt;font face=&quot;Courier New&quot;&gt;&lt;b&gt;&lt;span style=&quot;color: rgb(102, 178, 255); font-size: 15px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: center; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; float: none; display: inline !important;&quot;&gt;aw_valid := '0'&lt;/span&gt;&lt;/b&gt;&lt;/font&gt;&lt;font face=&quot;Courier New&quot;&gt;&lt;span style=&quot;orphans: 2; text-align: center; text-indent: 0px; widows: 2; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; float: none; display: inline !important;&quot;&gt;&lt;br&gt;&lt;/span&gt;&lt;/font&gt;&lt;font face=&quot;Courier New&quot;&gt;&lt;b&gt;&lt;span style=&quot;color: rgb(102, 178, 255); text-align: center;&quot;&gt;w_valid := '0'&lt;br&gt;&lt;/span&gt;&lt;/b&gt;&lt;/font&gt;&lt;b style=&quot;font-family: &amp;quot;Courier New&amp;quot;;&quot;&gt;&lt;span style=&quot;color: rgb(102, 178, 255); text-align: center;&quot;&gt;b_ready := '1'&lt;/span&gt;&lt;/b&gt;&lt;font face=&quot;Courier New&quot;&gt;&lt;span style=&quot;text-align: center;&quot;&gt;&lt;br&gt;&lt;/span&gt;&lt;/font&gt;" style="text;whiteSpace=wrap;html=1;fontSize=15;" parent="76" vertex="1">
                     <mxGeometry x="120" y="60" width="138.38" height="65.34" as="geometry"/>
-                </mxCell>
-                <mxCell id="79" value="" style="group" parent="1" vertex="1" connectable="0">
-                    <mxGeometry x="-633.0699999999999" y="1170" width="224.19" height="135.34000000000015" as="geometry"/>
-                </mxCell>
-                <mxCell id="22" value="&lt;font style=&quot;font-size: 15px;&quot;&gt;idle&lt;br&gt;&lt;/font&gt;" style="ellipse;whiteSpace=wrap;html=1;rounded=0;" parent="79" vertex="1">
-                    <mxGeometry width="110" height="80" as="geometry"/>
-                </mxCell>
-                <mxCell id="70" value="&lt;font face=&quot;Courier New&quot;&gt;&lt;span style=&quot;text-align: center;&quot;&gt;&lt;b&gt;&lt;font color=&quot;#66b2ff&quot;&gt;done := '1'&lt;br&gt;r_data := data&lt;br&gt;r_addr := addr&lt;/font&gt;&lt;/b&gt;&lt;br&gt;&lt;/span&gt;&lt;/font&gt;" style="text;whiteSpace=wrap;html=1;fontSize=15;fontColor=#FFFFFF;" parent="79" vertex="1">
-                    <mxGeometry x="85.81" y="70" width="138.38" height="65.34" as="geometry"/>
-                </mxCell>
-                <mxCell id="71" style="edgeStyle=orthogonalEdgeStyle;html=1;fontColor=#66B2FF;curved=1;" parent="79" source="22" target="22" edge="1">
-                    <mxGeometry relative="1" as="geometry">
-                        <Array as="points">
-                            <mxPoint x="-50" y="60"/>
-                        </Array>
-                    </mxGeometry>
-                </mxCell>
-                <mxCell id="73" value="start'" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=15;fontColor=#FFFFFF;" parent="71" vertex="1" connectable="0">
-                    <mxGeometry x="-0.1117" y="9" relative="1" as="geometry">
-                        <mxPoint as="offset"/>
-                    </mxGeometry>
                 </mxCell>
                 <mxCell id="83" value="" style="group" parent="1" vertex="1" connectable="0">
                     <mxGeometry x="-310" y="1650" width="260" height="100" as="geometry"/>
@@ -184,7 +163,7 @@
                 <mxCell id="29" value="&lt;font style=&quot;font-size: 15px;&quot;&gt;complete_aw_wait_w_ready&lt;br&gt;&lt;/font&gt;" style="ellipse;whiteSpace=wrap;html=1;rounded=0;" parent="83" vertex="1">
                     <mxGeometry width="210" height="80" as="geometry"/>
                 </mxCell>
-                <mxCell id="30" value="&lt;font face=&quot;Courier New&quot;&gt;&lt;b&gt;&lt;span style=&quot;color: rgb(102, 178, 255); font-size: 15px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: center; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; float: none; display: inline !important;&quot;&gt;aw_valid := '0'&lt;/span&gt;&lt;/b&gt;&lt;/font&gt;&lt;font face=&quot;Courier New&quot;&gt;&lt;span style=&quot;orphans: 2; text-align: center; text-indent: 0px; widows: 2; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; float: none; display: inline !important;&quot;&gt;&lt;br&gt;&lt;font color=&quot;#66b2ff&quot;&gt;&lt;b&gt;&amp;nbsp;&lt;/b&gt;&lt;/font&gt;&lt;/span&gt;&lt;/font&gt;" style="text;whiteSpace=wrap;html=1;fontSize=15;fontColor=#FFFFFF;" parent="83" vertex="1">
+                <mxCell id="30" value="&lt;font face=&quot;Courier New&quot;&gt;&lt;b&gt;&lt;span style=&quot;color: rgb(102, 178, 255); font-size: 15px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: center; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; float: none; display: inline !important;&quot;&gt;aw_valid := '0'&lt;/span&gt;&lt;/b&gt;&lt;/font&gt;&lt;font face=&quot;Courier New&quot;&gt;&lt;span style=&quot;orphans: 2; text-align: center; text-indent: 0px; widows: 2; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; float: none; display: inline !important;&quot;&gt;&lt;br&gt;&lt;font color=&quot;#66b2ff&quot;&gt;&lt;b&gt;&amp;nbsp;&lt;/b&gt;&lt;/font&gt;&lt;/span&gt;&lt;/font&gt;" style="text;whiteSpace=wrap;html=1;fontSize=15;" parent="83" vertex="1">
                     <mxGeometry x="120" y="70" width="140" height="30" as="geometry"/>
                 </mxCell>
                 <mxCell id="31" style="edgeStyle=orthogonalEdgeStyle;curved=1;html=1;fontSize=15;" parent="83" source="29" target="29" edge="1">
@@ -199,7 +178,7 @@
                         <mxPoint x="31" y="19" as="offset"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="85" style="edgeStyle=orthogonalEdgeStyle;html=1;fontSize=15;fontColor=#FFFFFF;curved=1;" edge="1" parent="1" source="66" target="22">
+                <mxCell id="85" style="edgeStyle=orthogonalEdgeStyle;html=1;fontSize=15;curved=1;" parent="1" source="66" target="22" edge="1">
                     <mxGeometry relative="1" as="geometry">
                         <Array as="points">
                             <mxPoint x="-10" y="2130"/>
@@ -207,23 +186,44 @@
                         </Array>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="86" value="" style="group" connectable="0" vertex="1" parent="1">
+                <mxCell id="86" value="" style="group" parent="1" connectable="0" vertex="1">
                     <mxGeometry x="-280" y="1820" width="180" height="130" as="geometry"/>
                 </mxCell>
                 <mxCell id="55" value="&lt;font style=&quot;font-size: 15px;&quot;&gt;complete_w&lt;br&gt;&lt;/font&gt;" style="ellipse;whiteSpace=wrap;html=1;rounded=0;" parent="86" vertex="1">
                     <mxGeometry width="150" height="80" as="geometry"/>
                 </mxCell>
-                <mxCell id="56" value="&lt;font face=&quot;Courier New&quot;&gt;&lt;b&gt;&lt;span style=&quot;color: rgb(102, 178, 255); font-size: 15px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: center; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; float: none; display: inline !important;&quot;&gt;w_valid := '0'&lt;/span&gt;&lt;/b&gt;&lt;/font&gt;&lt;font face=&quot;Courier New&quot;&gt;&lt;span style=&quot;orphans: 2; text-align: center; text-indent: 0px; widows: 2; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; float: none; display: inline !important;&quot;&gt;&lt;br&gt;&lt;/span&gt;&lt;/font&gt;&lt;b style=&quot;font-family: &amp;quot;Courier New&amp;quot;;&quot;&gt;&lt;span style=&quot;color: rgb(102, 178, 255); text-align: center;&quot;&gt;b_ready := '1'&lt;/span&gt;&lt;/b&gt;&lt;font face=&quot;Courier New&quot;&gt;&lt;span style=&quot;orphans: 2; text-align: center; text-indent: 0px; widows: 2; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; float: none; display: inline !important;&quot;&gt;&lt;font color=&quot;#66b2ff&quot;&gt;&lt;b&gt;&amp;nbsp;&lt;/b&gt;&lt;/font&gt;&lt;/span&gt;&lt;/font&gt;" style="text;whiteSpace=wrap;html=1;fontSize=15;fontColor=#FFFFFF;" parent="86" vertex="1">
+                <mxCell id="56" value="&lt;font face=&quot;Courier New&quot;&gt;&lt;b&gt;&lt;span style=&quot;color: rgb(102, 178, 255); font-size: 15px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: center; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; float: none; display: inline !important;&quot;&gt;w_valid := '0'&lt;/span&gt;&lt;/b&gt;&lt;/font&gt;&lt;font face=&quot;Courier New&quot;&gt;&lt;span style=&quot;orphans: 2; text-align: center; text-indent: 0px; widows: 2; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; float: none; display: inline !important;&quot;&gt;&lt;br&gt;&lt;/span&gt;&lt;/font&gt;&lt;b style=&quot;font-family: &amp;quot;Courier New&amp;quot;;&quot;&gt;&lt;span style=&quot;color: rgb(102, 178, 255); text-align: center;&quot;&gt;b_ready := '1'&lt;/span&gt;&lt;/b&gt;&lt;font face=&quot;Courier New&quot;&gt;&lt;span style=&quot;orphans: 2; text-align: center; text-indent: 0px; widows: 2; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; float: none; display: inline !important;&quot;&gt;&lt;font color=&quot;#66b2ff&quot;&gt;&lt;b&gt;&amp;nbsp;&lt;/b&gt;&lt;/font&gt;&lt;/span&gt;&lt;/font&gt;" style="text;whiteSpace=wrap;html=1;fontSize=15;" parent="86" vertex="1">
                     <mxGeometry x="40" y="80" width="140" height="50" as="geometry"/>
                 </mxCell>
-                <mxCell id="87" value="" style="group" vertex="1" connectable="0" parent="1">
-                    <mxGeometry x="-663.0699999999999" y="1340" width="341.2999999999999" height="150" as="geometry"/>
+                <mxCell id="89" value="" style="group" vertex="1" connectable="0" parent="1">
+                    <mxGeometry x="-683.0699999999999" y="1170" width="303.06999999999994" height="140" as="geometry"/>
                 </mxCell>
-                <mxCell id="41" value="&lt;font style=&quot;font-size: 15px;&quot;&gt;send_addr_and_data&lt;br&gt;&lt;/font&gt;" style="ellipse;whiteSpace=wrap;html=1;rounded=0;" parent="87" vertex="1">
+                <mxCell id="22" value="&lt;font style=&quot;font-size: 15px;&quot;&gt;idle&lt;br&gt;&lt;/font&gt;" style="ellipse;whiteSpace=wrap;html=1;rounded=0;" parent="89" vertex="1">
+                    <mxGeometry x="50" width="110" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="70" value="&lt;font face=&quot;Courier New&quot;&gt;&lt;span style=&quot;text-align: center;&quot;&gt;&lt;b&gt;&lt;font color=&quot;#66b2ff&quot;&gt;done := '1'&lt;br&gt;reg_data := data&lt;br&gt;reg_addr := addr&lt;/font&gt;&lt;/b&gt;&lt;br&gt;&lt;/span&gt;&lt;/font&gt;" style="text;whiteSpace=wrap;html=1;fontSize=15;" parent="89" vertex="1">
+                    <mxGeometry x="135.80999999999995" y="70" width="167.26" height="70" as="geometry"/>
+                </mxCell>
+                <mxCell id="71" style="edgeStyle=orthogonalEdgeStyle;html=1;fontColor=#66B2FF;curved=1;" parent="89" source="22" target="22" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint y="60"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="73" value="start'" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=15;" parent="71" vertex="1" connectable="0">
+                    <mxGeometry x="-0.1117" y="9" relative="1" as="geometry">
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="90" value="" style="group" vertex="1" connectable="0" parent="1">
+                    <mxGeometry x="-663.0699999999999" y="1340" width="383.06999999999994" height="150" as="geometry"/>
+                </mxCell>
+                <mxCell id="41" value="&lt;font style=&quot;font-size: 15px;&quot;&gt;send_addr_and_data&lt;br&gt;&lt;/font&gt;" style="ellipse;whiteSpace=wrap;html=1;rounded=0;" parent="90" vertex="1">
                     <mxGeometry width="170" height="80" as="geometry"/>
                 </mxCell>
-                <mxCell id="42" value="&lt;font face=&quot;Courier New&quot;&gt;&lt;b&gt;&lt;span style=&quot;color: rgb(102, 178, 255); font-size: 15px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: center; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; float: none; display: inline !important;&quot;&gt;aw_address := r_addr&lt;br&gt;&lt;/span&gt;&lt;/b&gt;&lt;/font&gt;&lt;span style=&quot;font-family: &amp;quot;Courier New&amp;quot;;&quot;&gt;&lt;span style=&quot;color: rgb(102, 178, 255); text-align: center;&quot;&gt;&lt;b&gt;w_data&lt;/b&gt; &lt;b&gt;:= r&lt;/b&gt;&lt;/span&gt;&lt;/span&gt;&lt;font face=&quot;Courier New&quot;&gt;&lt;font color=&quot;#66b2ff&quot;&gt;&lt;b&gt;_data&lt;/b&gt;&lt;/font&gt;&lt;br style=&quot;border-color: rgb(0, 0, 0); color: rgb(102, 178, 255); font-size: 15px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: center; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;&quot;&gt;&lt;/font&gt;&lt;font face=&quot;Courier New&quot;&gt;&lt;span style=&quot;orphans: 2; text-align: center; text-indent: 0px; widows: 2; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; float: none; display: inline !important;&quot;&gt;&lt;b style=&quot;&quot;&gt;&lt;font color=&quot;#66b2ff&quot;&gt;aw_valid := '1'&lt;br&gt;&lt;/font&gt;&lt;/b&gt;&lt;/span&gt;&lt;/font&gt;&lt;b style=&quot;font-family: &amp;quot;Courier New&amp;quot;; text-align: center;&quot;&gt;&lt;font color=&quot;#66b2ff&quot;&gt;w_valid := '1'&lt;/font&gt;&lt;/b&gt;&lt;font face=&quot;Courier New&quot;&gt;&lt;span style=&quot;orphans: 2; text-align: center; text-indent: 0px; widows: 2; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; float: none; display: inline !important;&quot;&gt;&lt;br&gt;&lt;font color=&quot;#66b2ff&quot;&gt;&lt;b&gt;&amp;nbsp;&lt;/b&gt;&lt;/font&gt;&lt;/span&gt;&lt;/font&gt;" style="text;whiteSpace=wrap;html=1;fontSize=15;fontColor=#FFFFFF;" parent="87" vertex="1">
-                    <mxGeometry x="153.2299999999999" y="60" width="188.07" height="90" as="geometry"/>
+                <mxCell id="42" value="&lt;font face=&quot;Courier New&quot;&gt;&lt;b&gt;&lt;span style=&quot;color: rgb(102, 178, 255); font-size: 15px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: center; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; float: none; display: inline !important;&quot;&gt;aw_address := reg_addr&lt;br&gt;&lt;/span&gt;&lt;/b&gt;&lt;/font&gt;&lt;span style=&quot;font-family: &amp;quot;Courier New&amp;quot;;&quot;&gt;&lt;span style=&quot;color: rgb(102, 178, 255); text-align: center;&quot;&gt;&lt;b&gt;w_data&lt;/b&gt; &lt;b&gt;:= reg&lt;/b&gt;&lt;/span&gt;&lt;/span&gt;&lt;font face=&quot;Courier New&quot;&gt;&lt;font color=&quot;#66b2ff&quot;&gt;&lt;b&gt;_data&lt;/b&gt;&lt;/font&gt;&lt;br style=&quot;border-color: rgb(0, 0, 0); color: rgb(102, 178, 255); font-size: 15px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: center; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;&quot;&gt;&lt;/font&gt;&lt;font face=&quot;Courier New&quot;&gt;&lt;span style=&quot;orphans: 2; text-align: center; text-indent: 0px; widows: 2; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; float: none; display: inline !important;&quot;&gt;&lt;b style=&quot;&quot;&gt;&lt;font color=&quot;#66b2ff&quot;&gt;aw_valid := '1'&lt;br&gt;&lt;/font&gt;&lt;/b&gt;&lt;/span&gt;&lt;/font&gt;&lt;b style=&quot;font-family: &amp;quot;Courier New&amp;quot;; text-align: center;&quot;&gt;&lt;font color=&quot;#66b2ff&quot;&gt;w_valid := '1'&lt;/font&gt;&lt;/b&gt;&lt;font face=&quot;Courier New&quot;&gt;&lt;span style=&quot;orphans: 2; text-align: center; text-indent: 0px; widows: 2; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial; float: none; display: inline !important;&quot;&gt;&lt;br&gt;&lt;font color=&quot;#66b2ff&quot;&gt;&lt;b&gt;&amp;nbsp;&lt;/b&gt;&lt;/font&gt;&lt;/span&gt;&lt;/font&gt;" style="text;whiteSpace=wrap;html=1;fontSize=15;" parent="90" vertex="1">
+                    <mxGeometry x="153.22999999999996" y="60" width="229.84" height="90" as="geometry"/>
                 </mxCell>
             </root>
         </mxGraphModel>
