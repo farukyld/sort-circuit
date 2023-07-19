@@ -35,6 +35,8 @@ module sort_circuit #(
  	input b_valid,
  	input [RESP_WDTH-1:0] b_resp,
  	output b_ready,
+
+	output swich_case_default
 );
 
 // internal wires
@@ -103,7 +105,7 @@ controller ctrl(
 	.sl_j_plus_1_to_write_addr(sl_j_plus_1_to_write_addr),
 	.ld_elem2insert(ld_elem2insert),
 
-	.swich_case_default()
+	.swich_case_default(swich_case_default)
 );
 
 datapath#(.ADDR_WDTH(ADDR_WDTH), .DATA_WDTH(DATA_WDTH), .RESP_WDTH(RESP_WDTH)) dp(
