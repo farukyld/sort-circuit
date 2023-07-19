@@ -1,4 +1,10 @@
-`define MEMORY_STATE_WIDTH 5
+`ifndef MEMORY_DEFINED
+`define MEMORY_DEFINED
+
+`include "RAM_module_sync_out.v"
+`include "arithmetic/random_generator.v"
+
+
 
 module memory #(
     parameter ADDR_WDTH = 4,
@@ -37,6 +43,9 @@ module memory #(
 
 	output swich_case_default
 );
+
+
+localparam MEMORY_STATE_WIDTH = 'd5;
 
 
 localparam IDLE = 'd0;
@@ -123,13 +132,15 @@ wire [ADDR_WDTH-1:0] next_reg_addr;
 wire [DATA_WDTH-1:0] ram_out;
 wire in_enable, out_enable;
 
-RAM_module_sync_out #(.ADDR_WDTH(ADDR_WDTH), DATA_WDTH(DATA_WDTH))
+RAM_module_sync_out #(.ADDR_WDTH(ADDR_WDTH), .DATA_WDTH(DATA_WDTH))
 	ram (
 		.clk(clk),
 		.rst_n(rst_n),
 		.wr_enable(in_enable),
 		.rd_enable(out_enable),
-		.rd_data(ram_out)
+		.rd_data(ram_out),
+		.wr_data(reg_data),
+		.address(reg_addr)
 	);
 
 
@@ -142,8 +153,10 @@ always@ (posedge clk or negedge rst_n) begin
 		reg_data <= 0;
 	end else begin
 		current_state <= gen_state;
-		reg_addr <= next_reg_addr;
-		reg_data <= next_reg_data;
+		if (ld_reg_addr)
+			reg_addr <= next_reg_addr;
+		if (ld_reg_data)
+			reg_data <= next_reg_data;
 	end
 end
 
@@ -182,11 +195,12 @@ assign b_resp = ~always_error & (always_success | ~&rnd);
 assign swich_case_default = is_cs_swich_case_default;
 
 
-wire rnd;
-random_generator #(.DATA_WDTH(4)) ran_gen  (
+localparam RND_WDTH = 'd4;
+wire [RND_WDTH-1:0] rnd;
+random_generator #(.DATA_WDTH(RND_WDTH)) ran_gen  (
 	.clk(clk),
 	.rst_n(rst_n),
-	.enable(1),
+	.enable(1'b1),
 	.rnd(rnd)
 	);
 
@@ -264,3 +278,4 @@ end
 
 endmodule
     
+`endif

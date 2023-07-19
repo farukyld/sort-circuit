@@ -1,3 +1,10 @@
+`ifndef DATAPATH_DEFINED
+`define DATAPATH_DEFINED
+
+`include "arithmetic/adder.v"
+`include "arithmetic/substractor.v"
+`include "arithmetic/signed_comparator.v"
+`include "arithmetic/unsigned_comparator.v"
 
 module datapath#(
     parameter ADDR_WDTH = 4,
@@ -47,7 +54,7 @@ wire [ADDR_WDTH:0] i_plus1;
 adder i_1 (
 	.a(1),
 	.b(i),
-	.carry_in(0),
+	.carry_in(1'b0),
 	.sum(i_plus1),
 	.carry_out());
 
@@ -56,7 +63,7 @@ assign minuend = sl_decrd_to_j ? j : i;
 substractor i_or_j_1 (
 	.minuend(minuend),
 	.substrahend(1),
-	.borrow_in(0),
+	.borrow_in(1'b0),
 	.difference(next_j),
 	.borrow_out()
 );
@@ -110,7 +117,7 @@ unsigned_comparator i_size (
 	.gt(),.eq()
 );
 
-signed_comparator cmp_elements (
+signed_comparator #(.DATA_WDTH(DATA_WDTH)) cmp_elements (
 	.a(elem2insert),
 	.b(elem2compare),
 	.gt(elem2insert_gt_elem2compare),
@@ -118,7 +125,9 @@ signed_comparator cmp_elements (
 );
 
 wire j_lt_0;
-unsigned_comparator check_j (.a(j),.b(0),.lt(j_lt_0),.gt(),.eq());
+signed_comparator #(.DATA_WDTH(ADDR_WDTH+1)) check_j (.a(j),.b(1'b0),.lt(j_lt_0),.gt(),.eq());
 assign j_gte_0 = ~j_lt_0;
 
 endmodule
+
+`endif
