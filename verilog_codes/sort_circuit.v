@@ -88,6 +88,7 @@ controller ctrl(
 
 	.r_valid(r_valid),
 	.r_ready(r_ready),
+	.r_resp(r_resp),
 
 	// to write_submodule
 	.write_submodule_start(write_submodule_start),

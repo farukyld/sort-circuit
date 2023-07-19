@@ -18,8 +18,8 @@ def run_simulation():
     subprocess.run(cmd, check=True)
 
 def main():
-    if len(sys.argv) < 3:
-        print(f'Usage: python {sys.argv[0]} [--temp_mem | -t] <verilog_files> <vcd file>')
+    if len(sys.argv) < 2:
+        print(f'Usage: python {sys.argv[0]} [--temp_mem | -t] <verilog_files>')
         sys.exit(1)
 
     temp_mem = False
@@ -27,12 +27,12 @@ def main():
         temp_mem = True
         del sys.argv[1]
     
-    if len(sys.argv) < 2:
+    if len(sys.argv) < 1:
         print(f'Usage: python {sys.argv[0]} [--temp_mem | -t] <verilog_files>')
         sys.exit(1)
 
     memfile = "initial_ram_state.mem"
-    verilog_files = sys.argv[1:-1]
+    verilog_files = sys.argv[1:]
     ADDR_WDTH = 4
     DATA_WDTH = 32
 

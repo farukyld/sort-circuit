@@ -125,7 +125,7 @@ signed_comparator #(.DATA_WDTH(DATA_WDTH)) cmp_elements (
 );
 
 wire j_lt_0;
-unsigned_comparator check_j (.a(j),.b('b0),.lt(j_lt_0),.gt(),.eq());
+signed_comparator #(.DATA_WDTH(ADDR_WDTH+1)) check_j (.a(j),.b(1'b0),.lt(j_lt_0),.gt(),.eq());
 assign j_gte_0 = ~j_lt_0;
 
 endmodule

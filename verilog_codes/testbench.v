@@ -68,11 +68,13 @@ sort_circuit #(
     .r_data(r_data),
     .r_resp(r_resp),
     .r_valid(r_valid),
+    .r_ready(r_ready),
     .aw_ready(aw_ready),
     .aw_address(aw_address),
     .aw_valid(aw_valid),
     .w_data(w_data),
     .w_valid(w_valid),
+    .w_ready(w_ready),
     .b_valid(b_valid),
     .b_resp(b_resp),
     .b_ready(b_ready),
@@ -95,11 +97,13 @@ memory #(
     .r_data(r_data),
     .r_resp(r_resp),
     .r_valid(r_valid),
+    .r_ready(r_ready),
     .aw_ready(aw_ready),
     .aw_address(aw_address),
     .aw_valid(aw_valid),
     .w_data(w_data),
     .w_valid(w_valid),
+    .w_ready(w_ready),
     .b_valid(b_valid),
     .b_resp(b_resp),
     .b_ready(b_ready),
@@ -111,16 +115,18 @@ localparam CLK_PERIOD = 10;
 always #(CLK_PERIOD/2) clk = ~clk;
 
 initial begin
-    $dumpfile("tb_.vcd");
+    $dumpfile("tb.vcd");
     $dumpvars(0, tb_);
 end
+
+integer i;
 
 initial begin
     #1 rst_n<=1'bx;clk<=1'bx;
     #(CLK_PERIOD*3) rst_n<=1;
     always_success <= 1'b1;
     always_error <= 1'b0;
-
+    arr_size <= 'd16;
     #(CLK_PERIOD*3) rst_n<=0;clk<=0;
     repeat(5) @(posedge clk);
     rst_n<=1;
@@ -128,8 +134,12 @@ initial begin
 
     @(posedge clk);
     
-    @(posedge done);
-    
+    @(posedge done or posedge switch_case_default_memory or posedge switch_case_default_sorter);
+    #5
+    $display("after sort");
+    for (i =0;i<16;i = i + 1)
+        $display(memory_inst.ram.RAM[i]);
+
     $finish(2);
 end
 

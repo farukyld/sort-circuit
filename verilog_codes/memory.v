@@ -138,7 +138,9 @@ RAM_module_sync_out #(.ADDR_WDTH(ADDR_WDTH), .DATA_WDTH(DATA_WDTH))
 		.rst_n(rst_n),
 		.wr_enable(in_enable),
 		.rd_enable(out_enable),
-		.rd_data(ram_out)
+		.rd_data(ram_out),
+		.wr_data(reg_data),
+		.address(reg_addr)
 	);
 
 
@@ -151,8 +153,10 @@ always@ (posedge clk or negedge rst_n) begin
 		reg_data <= 0;
 	end else begin
 		current_state <= gen_state;
-		reg_addr <= next_reg_addr;
-		reg_data <= next_reg_data;
+		if (ld_reg_addr)
+			reg_addr <= next_reg_addr;
+		if (ld_reg_data)
+			reg_data <= next_reg_data;
 	end
 end
 
