@@ -81,7 +81,7 @@ controller ctrl(
 	// user interface
 	.start(start),
 	.done(done),
-	.err(err),
+	.error(err),
 	// memory interface
 	.ar_valid(ar_valid),
 	.ar_ready(ar_ready),

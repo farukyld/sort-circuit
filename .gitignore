@@ -6,3 +6,4 @@ generated_logisim_files/
 *.bak*
 .vscode
 *.mem
+*.vcd

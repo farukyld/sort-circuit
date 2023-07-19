@@ -1,7 +1,6 @@
 `ifndef CONTROLLER_DEFINED
 `define CONTROLLER_DEFINED
 
-`define CONTROLLER_STATE_WDTH 5
 
 module controller #(
     parameter ADDR_WDTH = 4,
@@ -49,6 +48,8 @@ module controller #(
     output swich_case_default
 );
 
+localparam CONTROLLER_STATE_WDTH  = 'd5;
+
 
 localparam WAIT_START = 'd0;
 localparam OUTER_LOOP_CHECK = 'd1;
@@ -79,12 +80,12 @@ localparam SWICH_CASE_DEFAULT = 'd24;
 
 wire sl_to_arg_return_state;
 wire ld_arg_return_state;
-reg [STATE_WDTH-1:0] arg_return_state, next_return_state;
+reg [CONTROLLER_STATE_WDTH-1:0] arg_return_state, next_return_state;
 
 wire sl_to_state;
-reg [STATE_WDTH-1:0] current_state = WAIT_START;
-reg [STATE_WDTH-1:0] gen_state;
-wire [STATE_WDTH-1:0] next_state;
+reg [CONTROLLER_STATE_WDTH-1:0] current_state = WAIT_START;
+reg [CONTROLLER_STATE_WDTH-1:0] gen_state;
+wire [CONTROLLER_STATE_WDTH-1:0] next_state;
 
 wire is_cs_wait_start,
 	is_cs_outer_loop_check,
@@ -289,7 +290,7 @@ always@ ( * ) begin
             gen_state <= ERR;
         
         RETURN_READ_FN: 
-            gen_state <= x;
+            gen_state <= 'dx;
 
         default:
             gen_state <= SWICH_CASE_DEFAULT;

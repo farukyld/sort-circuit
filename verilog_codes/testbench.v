@@ -103,7 +103,7 @@ memory #(
     .b_valid(b_valid),
     .b_resp(b_resp),
     .b_ready(b_ready),
-    .switch_case_default(switch_case_default)
+    .swich_case_default(switch_case_default_memory)
 );
 
 
@@ -118,6 +118,8 @@ end
 initial begin
     #1 rst_n<=1'bx;clk<=1'bx;
     #(CLK_PERIOD*3) rst_n<=1;
+    always_success <= 1'b1;
+    always_error <= 1'b0;
 
     #(CLK_PERIOD*3) rst_n<=0;clk<=0;
     repeat(5) @(posedge clk);

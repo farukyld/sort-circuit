@@ -5,7 +5,6 @@
 `include "arithmetic/random_generator.v"
 
 
-`define MEMORY_STATE_WIDTH 5
 
 module memory #(
     parameter ADDR_WDTH = 4,
@@ -44,6 +43,9 @@ module memory #(
 
 	output swich_case_default
 );
+
+
+localparam MEMORY_STATE_WIDTH = 'd5;
 
 
 localparam IDLE = 'd0;
@@ -189,11 +191,12 @@ assign b_resp = ~always_error & (always_success | ~&rnd);
 assign swich_case_default = is_cs_swich_case_default;
 
 
-wire rnd;
-random_generator #(.DATA_WDTH(4)) ran_gen  (
+localparam RND_WDTH = 'd4;
+wire [RND_WDTH-1:0] rnd;
+random_generator #(.DATA_WDTH(RND_WDTH)) ran_gen  (
 	.clk(clk),
 	.rst_n(rst_n),
-	.enable(1),
+	.enable(1'b1),
 	.rnd(rnd)
 	);
 

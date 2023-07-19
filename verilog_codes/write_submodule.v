@@ -1,7 +1,6 @@
 `ifndef WRITE_SUBMODULE_DEFINED
 `define WRITE_SUBMODULE_DEFINED
 
-`define WRITE_SUBMODULE_STATE_WDTH 4
 
 module write_submodule #(
     parameter ADDR_WDTH = 4,
@@ -35,6 +34,10 @@ module write_submodule #(
 	output swich_case_default
 );
 
+
+localparam WRITE_SUBMODULE_STATE_WDTH = 'd4;
+
+
 localparam IDLE = 'd0;
 localparam WAIT_AW_READY_OR_W_READY = 'd1;
 localparam COMPLETE_W_WAIT_AW_READY = 'd2;
@@ -47,8 +50,8 @@ localparam COMPLETE_W = 'd8;
 localparam SEND_ADDR_AND_DATA = 'd9;
 localparam SWICH_CASE_DEFAULT = 'd10;
 
-reg [STATE_WDTH-1:0] current_state = IDLE;
-reg [STATE_WDTH-1:0] gen_state;
+reg [WRITE_SUBMODULE_STATE_WDTH-1:0] current_state = IDLE;
+reg [WRITE_SUBMODULE_STATE_WDTH-1:0] gen_state;
 
 
 
@@ -171,7 +174,7 @@ always@ ( * ) begin
             gen_state <= IDLE;
         
         default:
-            gen_state <= SWITCH_CASE_DEFAULT;
+            gen_state <= SWICH_CASE_DEFAULT;
     endcase
 end
 

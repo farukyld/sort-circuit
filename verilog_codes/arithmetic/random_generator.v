@@ -2,17 +2,17 @@
 `define RANDOM_GENERATOR_DEFINED
 // written by chatGPT
 module random_generator #(
-    parameter DATA_WIDTH = 32
+    parameter DATA_WDTH = 32
 )(
     input wire clk,
     input wire rst_n,
     input wire enable,
-    output reg [DATA_WIDTH-1:0] rnd
+    output reg [DATA_WDTH-1:0] rnd
 );
 
     // Random seed
     localparam RANDOM_SEED = 123456;
-    reg [DATA_WIDTH-1:0] seed = RANDOM_SEED;
+    reg [DATA_WDTH-1:0] seed = RANDOM_SEED;
 
     // Pseudo-random number generation using a simple multiplication and modulo approach
     always @(posedge clk or negedge rst_n)  begin
