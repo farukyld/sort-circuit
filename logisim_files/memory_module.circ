@@ -102,25 +102,25 @@
       <a name="label" val="gen_complete_b"/>
     </comp>
     <comp lib="0" loc="(1150,1340)" name="Tunnel">
+      <a name="label" val="gen_complete_w"/>
+    </comp>
+    <comp lib="0" loc="(1150,1340)" name="Tunnel">
       <a name="facing" val="east"/>
       <a name="label" val="w_transfer"/>
     </comp>
-    <comp lib="0" loc="(1150,1340)" name="Tunnel">
-      <a name="label" val="gen_complete_w"/>
+    <comp lib="0" loc="(1150,1380)" name="Tunnel">
+      <a name="label" val="gen_store_reg_data"/>
     </comp>
     <comp lib="0" loc="(1150,1380)" name="Tunnel">
       <a name="facing" val="east"/>
       <a name="label" val="complete_w"/>
     </comp>
-    <comp lib="0" loc="(1150,1380)" name="Tunnel">
-      <a name="label" val="gen_store_reg_data"/>
-    </comp>
-    <comp lib="0" loc="(1150,1420)" name="Tunnel">
-      <a name="label" val="gen_respond_b"/>
-    </comp>
     <comp lib="0" loc="(1150,1420)" name="Tunnel">
       <a name="facing" val="east"/>
       <a name="label" val="store_reg_data"/>
+    </comp>
+    <comp lib="0" loc="(1150,1420)" name="Tunnel">
+      <a name="label" val="gen_respond_b"/>
     </comp>
     <comp lib="0" loc="(1150,1580)" name="Tunnel">
       <a name="label" val="gen_wait_b_ready"/>
@@ -134,12 +134,12 @@
       <a name="label" val="out_enable"/>
     </comp>
     <comp lib="0" loc="(1210,320)" name="Tunnel">
-      <a name="label" val="ram_in"/>
+      <a name="facing" val="east"/>
+      <a name="label" val="reg_data"/>
       <a name="width" val="32"/>
     </comp>
     <comp lib="0" loc="(1210,320)" name="Tunnel">
-      <a name="facing" val="east"/>
-      <a name="label" val="reg_data"/>
+      <a name="label" val="ram_in"/>
       <a name="width" val="32"/>
     </comp>
     <comp lib="0" loc="(1260,220)" name="Tunnel">
@@ -208,11 +208,11 @@
       <a name="label" val="aw_ready"/>
     </comp>
     <comp lib="0" loc="(1680,1410)" name="Tunnel">
-      <a name="facing" val="east"/>
-      <a name="label" val="w_transfer"/>
+      <a name="label" val="w_ready"/>
     </comp>
     <comp lib="0" loc="(1680,1410)" name="Tunnel">
-      <a name="label" val="w_ready"/>
+      <a name="facing" val="east"/>
+      <a name="label" val="w_transfer"/>
     </comp>
     <comp lib="0" loc="(1680,1470)" name="Tunnel">
       <a name="label" val="b_valid"/>
@@ -224,21 +224,21 @@
       <a name="label" val="r_resp"/>
     </comp>
     <comp lib="0" loc="(1680,1650)" name="Tunnel">
-      <a name="facing" val="east"/>
-      <a name="label" val="ar_transfer"/>
+      <a name="label" val="ar_ready"/>
     </comp>
     <comp lib="0" loc="(1680,1650)" name="Tunnel">
-      <a name="label" val="ar_ready"/>
+      <a name="facing" val="east"/>
+      <a name="label" val="ar_transfer"/>
     </comp>
     <comp lib="0" loc="(1680,1720)" name="Tunnel">
       <a name="label" val="r_valid"/>
     </comp>
     <comp lib="0" loc="(1680,1790)" name="Tunnel">
-      <a name="label" val="in_enable"/>
-    </comp>
-    <comp lib="0" loc="(1680,1790)" name="Tunnel">
       <a name="facing" val="east"/>
       <a name="label" val="store_reg_data"/>
+    </comp>
+    <comp lib="0" loc="(1680,1790)" name="Tunnel">
+      <a name="label" val="in_enable"/>
     </comp>
     <comp lib="0" loc="(170,1730)" name="Splitter">
       <a name="bit2" val="1"/>
@@ -318,15 +318,19 @@
       <a name="facing" val="east"/>
       <a name="label" val="complete_b"/>
     </comp>
+    <comp lib="0" loc="(1840,670)" name="Tunnel">
+      <a name="facing" val="east"/>
+      <a name="label" val="RAM_out"/>
+    </comp>
     <comp lib="0" loc="(1860,150)" name="Splitter">
       <a name="facing" val="west"/>
-      <a name="fanout" val="17"/>
-      <a name="incoming" val="17"/>
+      <a name="fanout" val="18"/>
+      <a name="incoming" val="18"/>
       <a name="spacing" val="3"/>
     </comp>
     <comp lib="0" loc="(1860,150)" name="Tunnel">
-      <a name="label" val="curr_state"/>
-      <a name="width" val="17"/>
+      <a name="label" val="current_state"/>
+      <a name="width" val="18"/>
     </comp>
     <comp lib="0" loc="(190,1630)" name="Tunnel">
       <a name="facing" val="east"/>
@@ -404,11 +408,11 @@
       <a name="label" val="aw_address"/>
       <a name="width" val="4"/>
     </comp>
-    <comp lib="0" loc="(2010,1400)" name="Tunnel">
+    <comp lib="0" loc="(2000,1390)" name="Tunnel">
       <a name="facing" val="east"/>
-      <a name="label" val="register_read_data"/>
+      <a name="label" val="RAM_out"/>
     </comp>
-    <comp lib="0" loc="(2010,1400)" name="Tunnel">
+    <comp lib="0" loc="(2000,1390)" name="Tunnel">
       <a name="label" val="out_enable"/>
     </comp>
     <comp lib="0" loc="(2010,1470)" name="Tunnel">
@@ -554,15 +558,19 @@
       <a name="facing" val="east"/>
       <a name="label" val="gen_complete_b"/>
     </comp>
+    <comp lib="0" loc="(2230,670)" name="Tunnel">
+      <a name="facing" val="east"/>
+      <a name="label" val="gen_RAM_out"/>
+    </comp>
     <comp lib="0" loc="(2250,150)" name="Splitter">
       <a name="facing" val="west"/>
-      <a name="fanout" val="17"/>
-      <a name="incoming" val="17"/>
+      <a name="fanout" val="18"/>
+      <a name="incoming" val="18"/>
       <a name="spacing" val="3"/>
     </comp>
     <comp lib="0" loc="(2250,150)" name="Tunnel">
       <a name="label" val="gen_state"/>
-      <a name="width" val="17"/>
+      <a name="width" val="18"/>
     </comp>
     <comp lib="0" loc="(260,1390)" name="Tunnel">
       <a name="facing" val="east"/>
@@ -752,17 +760,24 @@
     <comp lib="0" loc="(720,1350)" name="Tunnel">
       <a name="label" val="gen_complete_ar"/>
     </comp>
-    <comp lib="0" loc="(720,1400)" name="Tunnel">
+    <comp lib="0" loc="(720,1390)" name="Tunnel">
+      <a name="label" val="gen_RAM_out"/>
+    </comp>
+    <comp lib="0" loc="(720,1390)" name="Tunnel">
       <a name="facing" val="east"/>
       <a name="label" val="complete_ar"/>
     </comp>
-    <comp lib="0" loc="(720,1400)" name="Tunnel">
+    <comp lib="0" loc="(720,1430)" name="Tunnel">
       <a name="label" val="gen_register_read_data"/>
     </comp>
-    <comp lib="0" loc="(720,1450)" name="Tunnel">
+    <comp lib="0" loc="(720,1430)" name="Tunnel">
+      <a name="facing" val="east"/>
+      <a name="label" val="RAM_out"/>
+    </comp>
+    <comp lib="0" loc="(720,1470)" name="Tunnel">
       <a name="label" val="gen_output_read_data"/>
     </comp>
-    <comp lib="0" loc="(720,1450)" name="Tunnel">
+    <comp lib="0" loc="(720,1470)" name="Tunnel">
       <a name="facing" val="east"/>
       <a name="label" val="register_read_data"/>
     </comp>
@@ -770,11 +785,11 @@
       <a name="label" val="gen_wait_r_ready"/>
     </comp>
     <comp lib="0" loc="(730,1930)" name="Tunnel">
-      <a name="label" val="gen_complete_aw"/>
-    </comp>
-    <comp lib="0" loc="(730,1930)" name="Tunnel">
       <a name="facing" val="east"/>
       <a name="label" val="aw_transfer"/>
+    </comp>
+    <comp lib="0" loc="(730,1930)" name="Tunnel">
+      <a name="label" val="gen_complete_aw"/>
     </comp>
     <comp lib="0" loc="(730,2000)" name="Tunnel">
       <a name="label" val="gen_wait_w_valid"/>
@@ -790,6 +805,7 @@
       <a name="bit14" val="1"/>
       <a name="bit15" val="1"/>
       <a name="bit16" val="1"/>
+      <a name="bit17" val="1"/>
       <a name="bit2" val="1"/>
       <a name="bit3" val="1"/>
       <a name="bit4" val="1"/>
@@ -798,12 +814,12 @@
       <a name="bit7" val="1"/>
       <a name="bit8" val="1"/>
       <a name="bit9" val="1"/>
-      <a name="incoming" val="17"/>
+      <a name="incoming" val="18"/>
     </comp>
     <comp lib="0" loc="(730,230)" name="Tunnel">
       <a name="facing" val="east"/>
       <a name="label" val="gen_state"/>
-      <a name="width" val="17"/>
+      <a name="width" val="18"/>
     </comp>
     <comp lib="0" loc="(740,1720)" name="Tunnel">
       <a name="label" val="gen_complete_r"/>
@@ -881,6 +897,7 @@
       <a name="bit14" val="1"/>
       <a name="bit15" val="1"/>
       <a name="bit16" val="1"/>
+      <a name="bit17" val="1"/>
       <a name="bit2" val="1"/>
       <a name="bit3" val="1"/>
       <a name="bit4" val="1"/>
@@ -890,11 +907,11 @@
       <a name="bit8" val="1"/>
       <a name="bit9" val="1"/>
       <a name="facing" val="west"/>
-      <a name="incoming" val="17"/>
+      <a name="incoming" val="18"/>
     </comp>
     <comp lib="0" loc="(950,200)" name="Tunnel">
-      <a name="label" val="curr_state"/>
-      <a name="width" val="17"/>
+      <a name="label" val="current_state"/>
+      <a name="width" val="18"/>
     </comp>
     <comp lib="0" loc="(980,570)" name="Tunnel">
       <a name="label" val="reg_data"/>
@@ -983,7 +1000,7 @@
     </comp>
     <comp lib="4" loc="(840,320)" name="Register">
       <a name="appearance" val="logisim_evolution"/>
-      <a name="width" val="16"/>
+      <a name="width" val="17"/>
     </comp>
     <comp lib="4" loc="(840,870)" name="Random">
       <a name="appearance" val="logisim_evolution"/>
