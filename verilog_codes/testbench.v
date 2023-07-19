@@ -117,7 +117,7 @@ initial begin
     #(CLK_PERIOD*3) rst_n<=0;clk<=0;
     repeat(5) @(posedge clk);
     rst_n<=1;
-
+    start <= 1;
 
     @(posedge clk);
     
