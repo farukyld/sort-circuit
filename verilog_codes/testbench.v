@@ -1,3 +1,10 @@
+`ifndef TB_DEFINED
+`define TB_DEFINED
+
+`include "sort_circuit.v"
+`include "memory.v"
+
+
 module tb_;
 
 reg clk;
@@ -9,8 +16,6 @@ parameter DATA_WDTH = 32;
 parameter RESP_WDTH = 1;
 
 // Define the external signals
-reg clk;
-reg rst_n;
 reg always_success;
 reg always_error;
 reg [ADDR_WDTH:0] arr_size;
@@ -22,7 +27,7 @@ wire err;
 // Interconnect signals
 wire ar_valid;
 wire ar_ready;
-wire [ADDR_WDTH:1:0] ar_address;
+wire [ADDR_WDTH-1:0] ar_address;
 
 wire r_valid;
 wire r_ready;
@@ -127,3 +132,5 @@ initial begin
 end
 
 endmodule
+
+`endif

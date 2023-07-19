@@ -1,3 +1,6 @@
+`ifndef RAM_MODULE_SYNC_OUT_DEFINED
+`define RAM_MODULE_SYNC_OUT_DEFINED
+
 module RAM_module_sync_out #(
     parameter ADDR_WDTH = 4,
     parameter DATA_WDTH = 32
@@ -30,3 +33,5 @@ end
 
 
 endmodule
+
+`endif

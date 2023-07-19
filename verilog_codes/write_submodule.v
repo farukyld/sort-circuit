@@ -1,3 +1,6 @@
+`ifndef WRITE_SUBMODULE_DEFINED
+`define WRITE_SUBMODULE_DEFINED
+
 `define WRITE_SUBMODULE_STATE_WDTH 4
 
 module write_submodule #(
@@ -173,3 +176,5 @@ always@ ( * ) begin
 end
 
 endmodule
+
+`endif

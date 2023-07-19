@@ -1,3 +1,10 @@
+`ifndef SORT_CIRCUIT_DEFINED
+`define SORT_CIRCUIT_DEFINED
+
+`include "controller.v"
+`include "datapath.v"
+`include "write_submodule.v"
+
 
 module sort_circuit #(
     parameter ADDR_WDTH = 4,
@@ -171,3 +178,5 @@ write_submodule#(.ADDR_WDTH(ADDR_WDTH), .DATA_WDTH(DATA_WDTH), .RESP_WDTH(RESP_W
 );
 
 endmodule
+
+`endif

@@ -10,11 +10,11 @@ def generate_memfile(filename, size, word_width):
             f.write(f"{value:0{word_width}b}\n")
 
 def compile_verilog(files):
-    cmd = ['iverilog', '-o', 'output', *files]
+    cmd = ['iverilog', '-o', 'a.out', *files]
     subprocess.run(cmd, check=True)
 
 def run_simulation():
-    cmd = ['vvp', 'output']
+    cmd = ['vvp', 'a.out']
     subprocess.run(cmd, check=True)
 
 def main():
@@ -28,7 +28,7 @@ def main():
         del sys.argv[1]
     
     if len(sys.argv) < 2:
-        print(f'Usage: python {sys.argv[0]} [--temp_mem | -t] <verilog_files> <vcd file>')
+        print(f'Usage: python {sys.argv[0]} [--temp_mem | -t] <verilog_files>')
         sys.exit(1)
 
     memfile = "initial_ram_state.mem"
@@ -43,7 +43,7 @@ def main():
     run_simulation(vcd_file)
 
     # Clean up
-    os.remove('output')
+    os.remove('a.out')
     if temp_mem:
         os.remove(memfile)
 

@@ -1,3 +1,10 @@
+`ifndef DATAPATH_DEFINED
+`define DATAPATH_DEFINED
+
+`include "arithmetic/adder.v"
+`include "arithmetic/substractor.v"
+`include "arithmetic/signed_comparator.v"
+`include "arithmetic/unsigned_comparator.v"
 
 module datapath#(
     parameter ADDR_WDTH = 4,
@@ -122,3 +129,5 @@ unsigned_comparator check_j (.a(j),.b(0),.lt(j_lt_0),.gt(),.eq());
 assign j_gte_0 = ~j_lt_0;
 
 endmodule
+
+`endif

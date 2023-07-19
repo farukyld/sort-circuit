@@ -1,3 +1,6 @@
+`ifndef SIGNED_COMPARATOR_DEFINED
+`define SIGNED_COMPARATOR_DEFINED
+
 module signed_comparator #(parameter DATA_WIDTH = 8) (
     input wire signed [DATA_WIDTH-1:0] a,
     input wire signed [DATA_WIDTH-1:0] b,
@@ -9,3 +12,5 @@ module signed_comparator #(parameter DATA_WIDTH = 8) (
     assign lt = (a < b);
     assign gt = (a > b);
 endmodule
+
+`endif

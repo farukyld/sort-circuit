@@ -1,3 +1,5 @@
+`ifndef ADDER_DEFINED
+`define ADDER_DEFINED
 module adder #(parameter WIDTH = 32) 
 (
     input [WIDTH-1:0] a,
@@ -8,3 +10,5 @@ module adder #(parameter WIDTH = 32)
 );
     assign {carry_out, sum} = a + b + carry_in;
 endmodule
+
+`endif

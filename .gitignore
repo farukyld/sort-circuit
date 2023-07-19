@@ -5,3 +5,4 @@ generated_logisim_files/
 *.patch
 *.bak*
 .vscode
+*.mem

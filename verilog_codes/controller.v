@@ -1,4 +1,7 @@
-`define STATE_WDTH 5
+`ifndef CONTROLLER_DEFINED
+`define CONTROLLER_DEFINED
+
+`define CONTROLLER_STATE_WDTH 5
 
 module controller #(
     parameter ADDR_WDTH = 4,
@@ -294,3 +297,5 @@ always@ ( * ) begin
 end
 
 endmodule
+
+`endif

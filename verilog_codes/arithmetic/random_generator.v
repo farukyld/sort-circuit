@@ -1,4 +1,5 @@
-
+`ifndef RANDOM_GENERATOR_DEFINED
+`define RANDOM_GENERATOR_DEFINED
 // written by chatGPT
 module random_generator #(
     parameter DATA_WIDTH = 32
@@ -24,3 +25,5 @@ module random_generator #(
     end
 
 endmodule
+
+`endif

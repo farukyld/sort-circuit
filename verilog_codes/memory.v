@@ -1,3 +1,10 @@
+`ifndef MEMORY_DEFINED
+`define MEMORY_DEFINED
+
+`include "RAM_module_sync_out.v"
+`include "arithmetic/random_generator.v"
+
+
 `define MEMORY_STATE_WIDTH 5
 
 module memory #(
@@ -123,7 +130,7 @@ wire [ADDR_WDTH-1:0] next_reg_addr;
 wire [DATA_WDTH-1:0] ram_out;
 wire in_enable, out_enable;
 
-RAM_module_sync_out #(.ADDR_WDTH(ADDR_WDTH), DATA_WDTH(DATA_WDTH))
+RAM_module_sync_out #(.ADDR_WDTH(ADDR_WDTH), .DATA_WDTH(DATA_WDTH))
 	ram (
 		.clk(clk),
 		.rst_n(rst_n),
@@ -264,3 +271,4 @@ end
 
 endmodule
     
+`endif
